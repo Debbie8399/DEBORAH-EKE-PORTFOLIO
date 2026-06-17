@@ -3,7 +3,7 @@
 
 I turn complex datasets into clear dashboards that help organizations make faster, smarter decisions using Excel, SQL, Power BI, and Python.
 
-*ABOUT ME*
+***ABOUT ME***
 
 
 I’m a Data Analyst who turns raw data into insights people can actually use. I specialize in cleaning messy datasets, writing SQL queries, and building interactive dashboards that answer real business questions fast.
