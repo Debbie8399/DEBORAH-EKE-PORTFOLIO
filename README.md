@@ -36,7 +36,7 @@ Tech Sphere Academy,Cisco Networking Academy ,SLA Africa
 
  **Technical Skills**
 
-** Business Intelligence & Dashboarding**-Power BI, Microsoft Excel, Power Query, KPI tracking, Dashboard design
+ **Business Intelligence & Dashboarding**-Power BI, Microsoft Excel, Power Query, KPI tracking, Dashboard design
 
  **SQL & Data Querying**-SQL for data extraction, Joins, Aggregations, Filtering, Database querying
  Data cleaning, Exploratory data analysis
