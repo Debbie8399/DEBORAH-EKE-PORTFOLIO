@@ -23,6 +23,7 @@ Alex Ekwueme University,Ebonyi State- sept,2025
 Tech Sphere Academy,Cisco Networking Academy ,SLA Africa
 
  **Core Competencies**
+ 
  -Data Analysis & Business Intelligence - Turning raw data into clear business insights
  
  -Dashboard Development - Building interactive Power BI dashboards for KPI tracking  
