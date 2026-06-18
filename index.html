@@ -1,58 +1,66 @@
-<body style="margin:0; padding:0; font-family:'Arial', sans-serif;">
-  
-<!-- HERO SECTION - BIG NAME + YOUR KEYWORD + CIRCLE ARROW -->
-<section style="background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('1.png') center/cover; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white;" data-aos="fade">
-  <h1 style="font-size:85px; font-weight:800; letter-spacing:5px; margin-bottom:15px;">DEBORAH EKE</h1>
-  <h2 style="font-size:32px; font-weight:400; letter-spacing:3px; margin-bottom:20px;">PORTFOLIO</h2>
-  <p style="font-size:20px; margin-bottom:50px; opacity:0.9; letter-spacing:1px;">Understanding data for your decisions</p>
-  
-  <!-- CIRCLE DOWN ARROW LIKE YOU SAID -->
-  <a href="#walk" style="border:2px solid white; border-radius:50%; width:55px; height:55px; display:flex; align-items:center; justify-content:center; text-decoration:none; color:white; font-size:26px; animation:bounce 2s infinite;">↓</a>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deborah Eke - Data Analyst Portfolio</title>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+}
+@keyframes bounce {
+ 0%, 100% { transform: translateY(0); }
+ 50% { transform: translateY(12px); }
+}
+</style>
+</head>
+<body>
 
-<!-- WALK WITH ME RECTANGLE BUTTON -->
-<section id="walk" style="background:#f8f8f8; padding:80px 20px; text-align:center;" data-aos="fade-up">
-<span style="border:2px solid #333; padding:15px 40px; font-size:15px; letter-spacing:3px; font-weight:700; color:#333; text-transform:uppercase; display:inline-block;">WALK WITH ME...</span>
-</section>
+<!-- WALK WITH ME BUTTON - LIKE HER SITE -->
+<div style="text-align:center; padding-top:80px; padding-bottom:40px;" data-aos="fade-up">
+<span style="border:2px solid #333; padding:15px 40px; font-size:14px; letter-spacing:3px; font-weight:700; color:#333; text-transform:uppercase; display:inline-block;">WALK WITH ME...</span>
+</div>
 
-<!-- ABOUT ME SECTION - WHITE WITH BLUE HOVER ON CLICK -->
-<section id="about" style="background:white; padding:100px 20px;" data-aos="fade-up">
-<div style="max-width:900px; margin:0 auto; text-align:center;">
+<!-- ABOUT ME SECTION - SOLID PURPLE CARD -->
+<section id="about" style="padding:0 20px 100px 20px;" data-aos="fade-up">
+<div style="max-width:900px; margin:0 auto; background:#6a0dad; padding:70px 60px; box-shadow:0 10px 40px rgba(106,13,173,0.4); border-radius:10px;">
   
-<h2 id="about-title" style="font-size:50px; margin-bottom:50px; font-weight:800; color:#222; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:color 0.3s;">ABOUT ME</h2>
+<h2 id="about-title" style="font-size:48px; text-align:center; margin-bottom:40px; font-weight:800; color:white; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:color 0.3s;">ABOUT ME</h2>
 
-<p style="font-size:21px; line-height:2; color:#444; margin-bottom:30px; text-align:justify;">
+<p style="font-size:20px; line-height:2; color:white; margin-bottom:25px; text-align:center; font-weight:400;">
 I turn complex datasets into clear dashboards that help organizations make faster, smarter decisions using Excel, SQL, Power BI, and Python.
 </p>
 
-<p style="font-size:21px; line-height:2; color:#444; margin-bottom:30px; text-align:justify;">
+<p style="font-size:20px; line-height:2; color:white; margin-bottom:25px; text-align:center; font-weight:400;">
 I'm a Data Analyst who turns raw data into insights people can actually use. I specialize in cleaning messy datasets, writing SQL queries, and building interactive dashboards that answer real business questions fast.
 </p>
 
-<p style="font-size:21px; line-height:2; color:#444; margin-bottom:30px; text-align:justify;">
+<p style="font-size:20px; line-height:2; color:white; margin-bottom:25px; text-align:center; font-weight:400;">
 I turn raw data into clear decisions. I analyze performance, find improvement opportunities, and build simple, visual dashboards teams can act on.
 </p>
 
-<p style="font-size:21px; line-height:2; color:#444; text-align:justify;">
+<p style="font-size:20px; line-height:2; color:white; text-align:center; font-weight:400;">
 I'm passionate about business intelligence and data-driven decision making. I've built projects analyzing sales, customer behavior, and operational data using Excel, Power BI and SQL.
 </p>
 
 </div>
 </section>
 
-<!-- ANIMATION + CLICK COLOR CHANGE SCRIPT -->
-<style>
-@keyframes bounce {
- 0%, 100% { transform: translateY(0); }
- 50% { transform: translateY(12px); }
-}
-</style>
-
+<!-- ANIMATION SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+AOS.init({ duration: 1000, once: true });
+
+// ABOUT ME CLICK TO CHANGE COLOR
 document.getElementById('about-title').onclick = function() {
-  this.style.color = '#0066ff'; // Changes to blue when clicked
-  setTimeout(() => { this.style.color = '#222'; }, 2000); // Goes back after 2 sec
+  this.style.color = '#ffd700'; // Gold when clicked
+  setTimeout(() => { this.style.color = 'white'; }, 2000);
 }
 </script>
 
 </body>
+</html>
