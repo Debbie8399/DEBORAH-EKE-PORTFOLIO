@@ -155,6 +155,20 @@
       });
     });
   });
+ function openModal(id){
+  document.getElementById(id).style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id){
+  document.getElementById(id).style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+window.onclick = function(event){
+  if(event.target.classList.contains('modal')){
+    event.target.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
 </script>
 
 </body>
