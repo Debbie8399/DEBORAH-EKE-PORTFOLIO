@@ -63,7 +63,7 @@
 .close:hover{color:#fff}
 .modal-content h3{font-size:2rem;margin-bottom:20px}
 .modal-content p{color:#bbb;line-height:1.8;margin-bottom:18px}
-.modal-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin-top:30px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
 .modal-grid img{width:100%;border-radius:8px}
 @media(max-width:900px){.modal-grid{grid-template-columns:1fr}}
   @media(max-width:900px){
@@ -181,20 +181,30 @@ window.onclick = function(event){
 }
 </script>
 
- <!-- LOGISTICS MODAL POPUP -->
+<!-- LOGISTICS MODAL POPUP -->
 <div id="logisModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('logisModal')">&times;</span>
     <h3>Logistics Operations Dashboard - Power BI</h3>
-    <p><b>Project Overview:</b> This dashboard tracks delivery performance, revenue, and operational efficiency for a logistics company. Built using Power BI with data cleaned in Power Query.</p>
-    <p><b>Key Insights:</b> Identified delivery delays by region, optimized routes to reduce costs by 15%, and tracked on-time delivery rates above 92%.</p>
-    <p><b>Tools Used:</b> Power BI, Power Query, DAX</p>
+    <p><b>Project Overview:</b> Complete logistics tracking dashboard built with Power BI. Shows delivery performance, route optimization, and operational KPIs.</p>
     
     <div class="modal-grid">
-     <img src="Logis.png" alt="Dashboard 1">
-      <img src="Logis1.png" alt="Dashboard 1">
-      <img src="Logis2.png" alt="Dashboard 2">
-      <img src="Logis3.png" alt="Dashboard 3">
+      <div>
+        <img src="Logis.png" alt="Dashboard Overview">
+        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 1:</b> Main overview - Total revenue & deliveries</p>
+      </div>
+      <div>
+        <img src="Logis1.png" alt="Dashboard 2">
+        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 2:</b> Revenue & delivery performance KPIs</p>
+      </div>
+      <div>
+        <img src="Logis2.png" alt="Dashboard 3">
+        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 3:</b> Regional delivery breakdown & routes</p>
+      </div>
+      <div>
+        <img src="Logis3.png" alt="Dashboard 4">
+        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 4:</b> On-time delivery trends & efficiency</p>
+      </div>
     </div>
   </div>
 </div>
