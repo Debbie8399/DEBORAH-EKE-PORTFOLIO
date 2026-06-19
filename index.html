@@ -132,12 +132,11 @@
   <p><b>Technologies:</b> SQL, Power BI</p>
 </div>
 
-  <div class="proj-card show" data-category="excel">
-    <h3>Sales Analysis Dashboard - Excel</h3>
-    <p>Cleaned and organized sales data in Excel, then built an interactive dashboard using pivot tables and charts. Tracked total profit, revenue, and customer trends. Automated calculations with formulas to reduce manual reporting time.</p>
-    <img src="sales.png" alt="Sales Dashboard">
-  </div>
-</section>
+<div class="proj-card show" data-category="excel">
+  <h3>Sales Analysis Dashboard - Excel</h3>
+  <img src="excel.png.PNG" alt="Sales Dashboard" onclick="openModal('excelModal')">
+  <p>Cleaned and organized sales data in Excel, then built an interactive dashboard with Pivot Tables and slicers. Tracked KPIs, sales trends, and regional performance for data-driven decisions.</p>
+</div>
 
 <script>
   const bars = document.querySelectorAll('.bar span');
@@ -222,6 +221,24 @@ window.onclick = function(event){
         <p><b>Key Findings:</b></p>
         <p style="color:#ccc; font-size:0.85rem; line-height:1.6">
         Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue. Conversion rate improved by 18% after optimization.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- EXCEL/SALES MODAL -->
+<div id="excelModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('excelModal')">&times;</span>
+    <h3>Sales Analysis Dashboard - Excel</h3>
+    <p><b>Project Overview:</b> Interactive Excel dashboard built with Pivot Tables and slicers to track sales performance and KPIs.</p>
+    
+    <div class="modal-grid">
+      <div>
+        <img src="excel.png.PNG" alt="Excel Dashboard">
+        <p><b>Key Metrics:</b></p>
+        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">
+        [Type your sales analysis here Deborah - total sales, revenue, top products, best region, insights]
         </p>
       </div>
     </div>
