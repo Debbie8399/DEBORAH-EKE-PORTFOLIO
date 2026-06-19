@@ -126,10 +126,11 @@
   </div>
 
   <div class="proj-card show" data-category="powerbi sql">
-    <h3>E-Commerce Performance Dashboard - Power BI & SQL</h3>
-    <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources while analyzing order status trends over time.</p>
-    <img src="ecommerce.png" alt="Ecommerce Dashboard">
-  </div>
+  <h3>E-Commerce Performance Analysis</h3>
+  <img src="ecommerce1.png" alt="Ecommerce Dashboard" onclick="openModal('ecommerceModal')">
+  <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources.</p>
+  <p><b>Technologies:</b> SQL, Power BI</p>
+</div>
 
   <div class="proj-card show" data-category="excel">
     <h3>Sales Analysis Dashboard - Excel</h3>
@@ -204,6 +205,24 @@ window.onclick = function(event){
       <div>
         <img src="LOGIS3.png" alt="Dashboard 4">
         <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 4:</b> On-time delivery trends & efficiency</p>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- ECOMMERCE MODAL POPUP -->
+<div id="ecommerceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
+    <h3>E-Commerce Performance Analysis</h3>
+    <p><b>Project Overview:</b> SQL + Power BI analysis tracking revenue performance and customer behavior patterns.</p>
+    
+    <div class="modal-grid">
+      <div>
+        <img src="ecommerce1.png" alt="E-commerce Dashboard">
+        <p><b>Key Findings:</b></p>
+        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">
+        Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue. Conversion rate improved by 18% after optimization.
+        </p>
       </div>
     </div>
   </div>
