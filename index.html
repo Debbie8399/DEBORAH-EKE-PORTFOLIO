@@ -40,7 +40,22 @@
   .proj-card h3{font-size:1.6rem;margin-bottom:15px}
   .proj-card p{color:#aaa;line-height:1.7;margin-bottom:20px}
   .proj-card img{width:100%;border-radius:8px;margin-top:15px}
+ .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px}
+.img-wrapper img{width:100%;display:block;transition:0.3s}
+.overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;opacity:0;transition:0.3s}
+.img-wrapper:hover .overlay{opacity:1}
+.overlay p{font-size:0.95rem;line-height:1.6;margin-bottom:15px}
+.view-more{font-size:0.85rem;color:#ccc;border:1px solid #555;padding:6px 14px;border-radius:20px}
 
+.modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
+.modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
+.close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
+.close:hover{color:#fff}
+.modal-content h3{font-size:2rem;margin-bottom:20px}
+.modal-content p{color:#bbb;line-height:1.8;margin-bottom:18px}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin-top:30px}
+.modal-grid img{width:100%;border-radius:8px}
+@media(max-width:900px){.modal-grid{grid-template-columns:1fr}}
   @media(max-width:900px){
     .hero{flex-direction:column;text-align:center;gap:40px}
     .hero-img img{width:300px;height:300px}
