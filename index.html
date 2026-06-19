@@ -109,11 +109,21 @@
     <button class="filter" data-filter="excel">Excel</button>
   </div>
 
-  <div class="proj-card show" data-category="powerbi">
-    <h3>Logistics Operations Dashboard - Power BI</h3>
-    <p>Analyzed logistics data to improve delivery efficiency and reduce operational costs. Cleaned data in Power Query, built table relationships, and created DAX measures for key metrics. Developed 4 dashboards tracking revenue, profit, miles driven, and on-time delivery performance with 83% fleet utilization.</p>
-    <img src="logistics.png" alt="Logistics Dashboard">
+ <div class="proj-card show" data-category="powerbi">
+  <h3>Logistics Operations Dashboard - Power BI</h3>
+  
+  <div class="img-wrapper" onclick="openModal('logisModal')">
+    <img src="logistics.png" alt="Logistics Dashboard Overview">
+    <div class="overlay">
+      <p>Analyzed logistics operations to identify patterns and trends.<br>
+      Dashboard presents key performance statistics on revenue, efficiency, and delivery performance.<br>
+      Insights highlight top drivers and customer segments to optimize operations.</p>
+      <span class="view-more">Click to view more →</span>
+    </div>
   </div>
+  
+  <p style="color:#aaa;line-height:1.7;margin-bottom:20px">Power BI dashboard presenting KPIs on revenue, efficiency, and delivery performance. Cleaned data in Power Query, built relationships and DAX measures to analyze operational patterns.</p>
+</div>
 
   <div class="proj-card show" data-category="powerbi sql">
     <h3>E-Commerce Performance Dashboard - Power BI & SQL</h3>
