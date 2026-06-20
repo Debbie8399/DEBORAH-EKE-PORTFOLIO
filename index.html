@@ -42,9 +42,6 @@
 
   .proj-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;margin-top:15px}
 
-  .project-link{display:inline-block; margin-top:20px; padding:12px 32px; background:transparent; border:2px solid #fff; color:#fff; border-radius:0; text-decoration:none; font-weight:700; font-size:0.85rem; letter-spacing:1px; transition:0.3s}
-  .project-link:hover{background:#fff; color:#0a0a0a}
-
   .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
   .modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
   .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
@@ -136,35 +133,23 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <button class="filter" data-filter="excel">Excel</button>
   </div>
 
-  <!-- LOGISTICS CARD - UPDATED ONLY -->
   <div class="proj-card show" data-category="powerbi">
     <h3>Logistics Operations Dashboard - Power BI</h3>
-    <a href="YOUR_LOGISTICS_LINK_HERE" target="_blank">
-      <img src="Logistics.png.jpg" alt="Logistics Dashboard">
-    </a>
+    <img src="Logistics.png.jpg" alt="Logistics Dashboard" onclick="openModal('logisModal')">
     <p>Power BI dashboard presenting KPIs on revenue, efficiency, and delivery performance. Cleaned data in Power Query, built relationships and DAX measures to analyze operational patterns.</p>
-    <a href="YOUR_LOGISTICS_LINK_HERE" target="_blank" class="project-link">VIEW PROJECT</a>
   </div>
 
-  <!-- ECOMMERCE CARD - UPDATED ONLY -->
   <div class="proj-card show" data-category="powerbi sql">
     <h3>E-Commerce Performance Analysis</h3>
-    <a href="YOUR_ECOMMERCE_LINK_HERE" target="_blank">
-      <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard">
-    </a>
+    <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard" onclick="openModal('ecommerceModal')">
     <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources.</p>
     <p><b>Technologies:</b> SQL, Power BI</p>
-    <a href="YOUR_ECOMMERCE_LINK_HERE" target="_blank" class="project-link">VIEW PROJECT</a>
   </div>
 
-  <!-- SALES CARD - UPDATED ONLY -->
   <div class="proj-card show" data-category="excel">
     <h3>Sales Analysis Dashboard - Excel</h3>
-    <a href="YOUR_SALES_LINK_HERE" target="_blank">
-      <img src="sales.png.jpg" alt="Sales Dashboard">
-    </a>
+    <img src="sales.png.jpg" alt="Sales Dashboard" onclick="openModal('excelModal')">
     <p>Cleaned and organized sales data in Excel, then built an interactive dashboard with Pivot Tables and slicers. Tracked KPIs, sales trends, and regional performance for data-driven decisions.</p>
-    <a href="YOUR_SALES_LINK_HERE" target="_blank" class="project-link">VIEW PROJECT</a>
   </div>
 </section>
 
@@ -212,7 +197,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   }
 </script>
 
-<!-- LOGISTICS MODAL - SAME AS BEFORE -->
+<!-- LOGISTICS MODAL -->
 <div id="logisModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('logisModal')">&times;</span>
@@ -227,7 +212,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   </div>
 </div>
 
-<!-- ECOMMERCE MODAL - SAME AS BEFORE -->
+<!-- ECOMMERCE MODAL -->
 <div id="ecommerceModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
@@ -235,7 +220,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <p><b>Project Overview:</b> SQL + Power BI analysis tracking revenue performance and customer behavior patterns.</p>
     <div class="modal-grid">
       <div>
-        <img src="ecommerce1.png" alt="E-commerce Dashboard">
+        <img src="ecommerce1.png.png" alt="E-commerce Dashboard">
         <p><b>Key Findings:</b></p>
         <p style="color:#ccc; font-size:0.85rem; line-height:1.6">Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue.</p>
       </div>
@@ -243,7 +228,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   </div>
 </div>
 
-<!-- EXCEL MODAL - SAME AS BEFORE -->
+<!-- EXCEL MODAL -->
 <div id="excelModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('excelModal')">&times;</span>
@@ -259,7 +244,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   </div>
 </div>
 
-<!-- ACHIEVEMENTS SECTION - SAME AS BEFORE -->
+<!-- ACHIEVEMENTS SECTION -->
 <section id="achievements">
   <h2>Achievements</h2>
   <div class="achievements-grid">
@@ -267,7 +252,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <!-- CARD 1 - CISCO - Image Left, Text Right -->
     <div class="ach-card">
       <div class="ach-img">
-        <img src="cisco.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
+        <img src="cisco.png.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
       </div>
       <div>
         <div class="ach-date">6<span>May 2026</span></div>
@@ -309,11 +294,11 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 </body>
 </html>
 
-<!-- CISCO MODAL - SAME AS BEFORE -->
+<!-- CISCO MODAL -->
 <div id="ciscoModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('ciscoModal')">&times;</span>
-    <img src="cisco.png" alt="Data Analytics Essentials Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <img src="cisco.png.png" alt="Data Analytics Essentials Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
     <h3>Data Analytics Essentials</h3>
     <p><b>Issued by:</b> Cisco Networking Academy</p>
     <p><b>Date:</b> 6 May 2026</p>
@@ -321,7 +306,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   </div>
 </div>
 
-<!-- SLA MODAL - SAME AS BEFORE -->
+<!-- SLA MODAL -->
 <div id="slaModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('slaModal')">&times;</span>
