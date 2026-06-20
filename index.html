@@ -8,7 +8,7 @@
  <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:#0a0a0a;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden}
-  
+
   .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px;gap:80px;flex-wrap:wrap;background:#0a0a0a}
   .hero-img img{width:420px;height:420px;border-radius:50%;object-fit:cover;border:6px solid #fff;box-shadow:0 0 60px rgba(255,255,255,0.1)}
   .hero-text{max-width:550px}
@@ -17,12 +17,12 @@
   .hero-text p{color:#ccc;line-height:1.7;margin-bottom:35px;font-size:1.05rem}
   .btn-download{padding:14px 32px;background:transparent;border:2px solid #fff;color:#fff;font-weight:600;cursor:pointer;border-radius:30px;transition:0.3s;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
   .btn-download:hover{background:#fff;color:#0a0a0a}
- 
+
   section{padding:80px 20px;max-width:1100px;margin:0 auto}
   .about-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:start}
   .about-wrap h2{font-size:2.8rem;font-weight:800;margin-bottom:25px;line-height:1.2}
   .about-wrap p{color:#bbb;line-height:1.8;margin-bottom:18px}
-  
+
   .skills .skill{margin-bottom:28px}
   .skills .skill-top{display:flex;justify-content:space-between;margin-bottom:8px;font-size:0.95rem}
   .skills .bar{height:4px;background:#222;border-radius:2px;overflow:hidden}
@@ -33,61 +33,48 @@
   .filters{display:flex;gap:12px;margin-bottom:40px;flex-wrap:wrap}
   .filter{padding:10px 24px;background:#1a1a1a;border:1px solid #333;color:#aaa;border-radius:6px;cursor:pointer;font-weight:500;transition:0.2s}
   .filter.active,.filter:hover{background:#fff;color:#0a0a0a;border-color:#fff}
-  
+
   .proj-card{background:#111;border:1px solid #222;border-radius:12px;padding:30px;margin-bottom:30px;transition:0.3s;display:none}
   .proj-card.show{display:block}
   .proj-card:hover{border-color:#444;transform:translateY(-5px)}
   .proj-card h3{font-size:1.6rem;margin-bottom:15px}
   .proj-card p{color:#aaa;line-height:1.7;margin-bottom:20px}
-  
-  /* THIS MAKES ALL PROJECT IMAGES SMALL */
-  .proj-card img {
-    width: 100%;
-    height: 180px; 
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 15px;
-  }
-  
- .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px}
-.img-wrapper img{width:100%;display:block;transition:0.3s}
-.overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px;opacity:0;transition:0.3s}
-.img-wrapper:hover .overlay{opacity:1}
-.overlay p{font-size:0.95rem;line-height:1.6;margin-bottom:15px}
-.view-more{font-size:0.85rem;color:#ccc;border:1px solid #555;padding:6px 14px;border-radius:20px}
 
-.modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
-.modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
-.close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
-.close:hover{color:#fff}
-.modal-content h3{font-size:2rem;margin-bottom:20px}
-.modal-content p{color:#bbb;line-height:1.8;margin-bottom:18px}
-.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
-.modal-grid img{width:100%;border-radius:8px}
-@media(max-width:900px){.modal-grid{grid-template-columns:1fr}}
+  .proj-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;margin-top:15px}
+
+  .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
+  .modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
+  .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
+  .close:hover{color:#fff}
+  .modal-content h3{font-size:2rem;margin-bottom:20px}
+  .modal-content p{color:#bbb;line-height:1.8;margin-bottom:18px}
+  .modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
+  .modal-grid img{width:100%;border-radius:8px}
+
+  /* ACHIEVEMENTS CSS */
+  #achievements h2{font-size:3rem;font-weight:800;margin-bottom:50px;text-align:center}
+  .achievements-grid{display:grid;grid-template-columns:1fr;gap:3.5rem;max-width:950px;margin:0 auto}
+  .ach-card{display:flex;gap:2.5rem;align-items:center}
+  .ach-card.reverse{flex-direction:row-reverse}
+  .ach-img{flex-shrink:0;border:2px solid #fff;padding:8px;border-radius:8px;background:white}
+  .ach-img img{width:240px;height:170px;object-fit:contain;display:block;cursor:pointer}
+  .ach-date{color:#fff;font-weight:800;font-size:3rem;line-height:1;margin-bottom:8px}
+  .ach-date span{font-size:0.95rem;color:#aaa;font-weight:400;display:block}
+  .ach-card h3{font-size:1.6rem;font-weight:800;margin-bottom:10px}
+  .ach-card p{color:#bbb;line-height:1.7;margin-bottom:12px}
+  .ach-link{color:#aaa;font-size:0.85rem;text-decoration:none;border-bottom:1px solid #555;padding-bottom:2px;cursor:pointer}
+  .ach-link:hover{color:#fff;border-color:#fff}
+
   @media(max-width:900px){
+    .modal-grid{grid-template-columns:1fr}
     .hero{flex-direction:column;text-align:center;gap:40px}
     .hero-img img{width:300px;height:300px}
     .hero-text h1{font-size:3rem}
     .about-wrap{grid-template-columns:1fr}
+    .ach-card,.ach-card.reverse{flex-direction:column;text-align:center;gap:1.5rem}
+    .ach-img img{width:200px;height:140px}
+    .ach-date{font-size:2.2rem}
   }
-  #achievements h2{font-size:3rem;font-weight:800;margin-bottom:50px;text-align:center}
-.achievements-grid{display:grid;grid-template-columns:1fr;gap:3.5rem;max-width:950px;margin:0 auto}
-.ach-card{display:flex;gap:2.5rem;align-items:center}
-.ach-card.reverse{flex-direction:row-reverse}
-.ach-img{flex-shrink:0;border:2px solid #fff;padding:8px;border-radius:8px;background:white}
-.ach-img img{width:240px;height:170px;object-fit:contain;display:block;cursor:pointer}
-.ach-date{color:#fff;font-weight:800;font-size:3rem;line-height:1;margin-bottom:8px}
-.ach-date span{font-size:0.95rem;color:#aaa;font-weight:400;display:block}
-.ach-card h3{font-size:1.6rem;font-weight:800;margin-bottom:10px}
-.ach-card p{color:#bbb;line-height:1.7;margin-bottom:12px}
-.ach-link{color:#aaa;font-size:0.85rem;text-decoration:none;border-bottom:1px solid #555;padding-bottom:2px;cursor:pointer}
-.ach-link:hover{color:#fff;border-color:#fff}
-@media(max-width:900px){
-.ach-card,.ach-card.reverse{flex-direction:column;text-align:center;gap:1.5rem}
-.ach-img img{width:200px;height:140px}
-.ach-date{font-size:2.2rem}
 </style>
 </head>
 <body>
@@ -142,17 +129,18 @@
   </div>
 
   <div class="proj-card show" data-category="powerbi sql">
-  <h3>E-Commerce Performance Analysis</h3>
-  <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard" onclick="openModal('ecommerceModal')">
-  <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources.</p>
-  <p><b>Technologies:</b> SQL, Power BI</p>
-</div>
+    <h3>E-Commerce Performance Analysis</h3>
+    <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard" onclick="openModal('ecommerceModal')">
+    <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources.</p>
+    <p><b>Technologies:</b> SQL, Power BI</p>
+  </div>
 
-<div class="proj-card show" data-category="excel">
-  <h3>Sales Analysis Dashboard - Excel</h3>
-  <img src="sales.png.jpg" alt="Sales Dashboard" onclick="openModal('excelModal')">
-  <p>Cleaned and organized sales data in Excel, then built an interactive dashboard with Pivot Tables and slicers. Tracked KPIs, sales trends, and regional performance for data-driven decisions.</p>
-</div>
+  <div class="proj-card show" data-category="excel">
+    <h3>Sales Analysis Dashboard - Excel</h3>
+    <img src="sales.png.jpg" alt="Sales Dashboard" onclick="openModal('excelModal')">
+    <p>Cleaned and organized sales data in Excel, then built an interactive dashboard with Pivot Tables and slicers. Tracked KPIs, sales trends, and regional performance for data-driven decisions.</p>
+  </div>
+</section>
 
 <script>
   const bars = document.querySelectorAll('.bar span');
@@ -181,131 +169,95 @@
       });
     });
   });
- function openModal(id){
-  document.getElementById(id).style.display = 'block';
-  document.body.style.overflow = 'hidden';
-}
-function closeModal(id){
-  document.getElementById(id).style.display = 'none';
-  document.body.style.overflow = 'auto';
-}
-window.onclick = function(event){
-  if(event.target.classList.contains('modal')){
-    event.target.style.display = 'none';
+
+  function openModal(id){
+    document.getElementById(id).style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id){
+    document.getElementById(id).style.display = 'none';
     document.body.style.overflow = 'auto';
   }
-}
+  window.onclick = function(event){
+    if(event.target.classList.contains('modal')){
+      event.target.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  }
 </script>
 
-<!-- LOGISTICS MODAL POPUP -->
+<!-- LOGISTICS MODAL -->
 <div id="logisModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('logisModal')">&times;</span>
-   <h3>Logistics Operations Dashboard - Power BI</h3>
+    <h3>Logistics Operations Dashboard - Power BI</h3>
     <p><b>Project Overview:</b> Complete logistics tracking dashboard built with Power BI. Shows delivery performance, route optimization, and operational KPIs.</p>
-    
     <div class="modal-grid">
-      <div>
-        <img src="LOGIS.png" alt="Dashboard Overview">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 1:</b> Main overview - Total revenue & deliveries</p>
-      </div>
-      <div>
-        <img src="LOGIS1.png" alt="Dashboard 2">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 2:</b> Revenue & delivery performance KPIs</p>
-      </div>
-      <div>
-        <img src="LOGIS2.png" alt="Dashboard 3">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 3:</b> Regional delivery breakdown & routes</p>
-      </div>
-      <div>
-        <img src="LOGIS3.png" alt="Dashboard 4">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 4:</b> On-time delivery trends & efficiency</p>
-      </div>
+      <div><img src="LOGIS.png" alt="Dashboard Overview"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 1:</b> Main overview - Total revenue & deliveries</p></div>
+      <div><img src="LOGIS1.png" alt="Dashboard 2"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 2:</b> Revenue & delivery performance KPIs</p></div>
+      <div><img src="LOGIS2.png" alt="Dashboard 3"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 3:</b> Regional delivery breakdown & routes</p></div>
+      <div><img src="LOGIS3.png" alt="Dashboard 4"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 4:</b> On-time delivery trends & efficiency</p></div>
     </div>
   </div>
 </div>
- <!-- ECOMMERCE MODAL POPUP -->
+
+<!-- ECOMMERCE MODAL -->
 <div id="ecommerceModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
     <h3>E-Commerce Performance Analysis</h3>
     <p><b>Project Overview:</b> SQL + Power BI analysis tracking revenue performance and customer behavior patterns.</p>
-    
     <div class="modal-grid">
       <div>
-        <img src="ecommerce1.png.png" alt="E-commerce Dashboard">
+        <img src="ecommerce1.png" alt="E-commerce Dashboard">
         <p><b>Key Findings:</b></p>
-        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">
-        Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue. Conversion rate improved by 18% after optimization.
-        </p>
+        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue.</p>
       </div>
     </div>
   </div>
 </div>
- <!-- EXCEL/SALES MODAL -->
+
+<!-- EXCEL MODAL -->
 <div id="excelModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('excelModal')">&times;</span>
     <h3>Sales Analysis Dashboard - Excel</h3>
     <p><b>Project Overview:</b> Interactive Excel dashboard built with Pivot Tables and slicers to track sales performance and KPIs.</p>
-    
     <div class="modal-grid">
       <div>
-        <img src="excel1.png.PNG" alt="Excel Dashboard">
+        <img src="excel1.png" alt="Excel Dashboard">
         <p><b>Key Metrics:</b></p>
-        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">
-        [Type your sales analysis here Deborah - total sales, revenue, top products, best region, insights]
-        </p>
+        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">[Type your sales analysis here Deborah]</p>
       </div>
     </div>
   </div>
 </div>
+
 <!-- ACHIEVEMENTS SECTION -->
-<!-- CISCO MODAL -->
-<div id="ciscoModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('ciscoModal')">&times;</span>
-    <img src="cisco.png.png" alt="Cisco Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
-    <h3>Cisco Certificate</h3>
-    <p><b>Issued by:</b> Cisco</p>
-    <p><b>Date:</b> [Full date]</p>
-    <p><b>Skills gained:</b> [2-3 lines about networking]</p>
-  </div>
-</div>
- <!-- SLA MODAL -->
-<div id="slaModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('slaModal')">&times;</span>
-    <img src="sla.png" alt="SLA Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
-    <h3>SLA Certificate</h3>
-    <p><b>Issued by:</b> [Organization]</p>
-    <p><b>Date:</b> [Full date]</p>
-    <p><b>Skills gained:</b> [2-3 lines]</p>
-  </div><!-- ACHIEVEMENTS SECTION -->
 <section id="achievements">
   <h2>Achievements</h2>
   <div class="achievements-grid">
 
-    <!-- CARD 1 - CISCO - Image Right, Text Left -->
+    <!-- CARD 1 - CISCO -->
     <div class="ach-card reverse">
       <div>
-        <div class="ach-date">06<span>May 2026</span></div>
+        <div class="ach-date">6<span>May 2026</span></div>
         <h3>Data Analytics Essentials</h3>
         <p>I have successfully completed the Data Analytics Essentials program with Cisco Networking Academy. I gained hands-on skills in data analysis, SQL, Python, and building dashboards to turn raw data into actionable business insights.</p>
         <span class="ach-link" onclick="openModal('ciscoModal')">View certificate →</span>
       </div>
       <div class="ach-img">
-        <img src="cisco.png.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
+        <img src="cisco.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
       </div>
     </div>
 
-    <!-- CARD 2 - SLA - Image Left, Text Right -->
+    <!-- CARD 2 - SLA -->
     <div class="ach-card">
       <div class="ach-img">
         <img src="sla.png" alt="SLA Certificate" onclick="openModal('slaModal')">
       </div>
       <div>
-        <div class="ach-date">[Day]<span>May 2026</span></div>
+        <div class="ach-date"><span>May 2026</span></div>
         <h3>Data Fundamentals Certification</h3>
         <p>I have successfully completed the program with She Leads Africa. I gained practical knowledge in data fundamentals, data cleaning, basic analysis, and working with datasets to extract meaningful insights.</p>
         <span class="ach-link" onclick="openModal('slaModal')">View certificate →</span>
@@ -314,6 +266,30 @@ window.onclick = function(event){
 
   </div>
 </section>
+
+<!-- CISCO MODAL -->
+<div id="ciscoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('ciscoModal')">&times;</span>
+    <img src="cisco.png" alt="Data Analytics Essentials Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <h3>Data Analytics Essentials</h3>
+    <p><b>Issued by:</b> Cisco Networking Academy</p>
+    <p><b>Date:</b> 6 May 2026</p>
+    <p><b>What I learned:</b> Data collection and cleaning, SQL queries, Python for analysis, data visualization, and building interactive dashboards to drive business decisions.</p>
+  </div>
 </div>
+
+<!-- SLA MODAL -->
+<div id="slaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('slaModal')">&times;</span>
+    <img src="sla.png" alt="Data Fundamentals Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <h3>Data Fundamentals Certification</h3>
+    <p><b>Issued by:</b> She Leads Africa</p>
+    <p><b>Date:</b> May 2026</p>
+    <p><b>What I learned:</b> Data fundamentals, data cleaning techniques, basic statistical analysis, and working with real datasets to identify trends and extract actionable insights.</p>
+  </div>
+</div>
+
 </body>
 </html>
