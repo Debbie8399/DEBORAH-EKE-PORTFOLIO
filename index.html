@@ -42,9 +42,6 @@
 
   .proj-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;margin-top:15px}
 
-  .project-link{display:inline-block; margin-top:15px; padding:10px 20px; background:#1a1a1a; border:1px solid #333; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s}
-  .project-link:hover{border-color:#4ade80; transform:translateY(-2px)}
-
   .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
   .modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
   .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
@@ -136,14 +133,10 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <button class="filter" data-filter="excel">Excel</button>
   </div>
 
-  <!-- LOGISTICS CARD -->
   <div class="proj-card show" data-category="powerbi">
     <h3>Logistics Operations Dashboard - Power BI</h3>
-    <a href="YOUR_DASHBOARD_LINK_HERE" target="_blank">
-      <img src="Logistics.png.jpg" alt="Logistics Dashboard">
-    </a>
+    <img src="Logistics.png.jpg" alt="Logistics Dashboard" onclick="openModal('logisModal')">
     <p>Power BI dashboard presenting KPIs on revenue, efficiency, and delivery performance. Cleaned data in Power Query, built relationships and DAX measures to analyze operational patterns.</p>
-    <a href="YOUR_DASHBOARD_LINK_HERE" target="_blank" class="project-link">View Project →</a>
   </div>
 
   <div class="proj-card show" data-category="powerbi sql">
@@ -154,9 +147,9 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   </div>
 
   <div class="proj-card show" data-category="excel">
-    <h3>Sales Performance Analysis - Excel</h3>
+    <h3>Sales Analysis Dashboard - Excel</h3>
     <img src="sales.png.jpg" alt="Sales Dashboard" onclick="openModal('excelModal')">
-    <p>End-to-end Excel analysis from data cleaning to interactive dashboard. Used Power Query, PivotTables, PivotCharts and slicers to analyze sales, profitability and customer data across 4 Nigerian regions.</p>
+    <p>Cleaned and organized sales data in Excel, then built an interactive dashboard with Pivot Tables and slicers. Tracked KPIs, sales trends, and regional performance for data-driven decisions.</p>
   </div>
 </section>
 
@@ -208,53 +201,14 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 <div id="logisModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('logisModal')">&times;</span>
-    <h3>Logistics Operations Analysis - Power BI</h3>
-    <p><b>Interact with the dashboard:</b> <a href="YOUR_DASHBOARD_LINK_HERE" target="_blank" style="color:#4ade80">View Live Dashboard</a></p>
-
-    <!-- 1. OVERVIEW BIG FIRST -->
-    <div style="margin:30px 0; text-align:center">
-      <img src="LOGIS.png" alt="Overview Dashboard" style="width:100%; max-width:900px; border-radius:10px; border:2px solid #444">
-      <p style="color:#4ade80; font-size:1rem; margin-top:10px"><b>Overview Dashboard:</b> KPIs, On-time Rate, Total Revenue & Deliveries</p>
-    </div>
-
-    <!-- 2. INTRODUCTION -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Introduction</h4>
-    <p style="color:#bbb; line-height:1.8">This study analyzes three years of operational data from a US trucking company to understand where the business is making money, where it is losing money, and where service quality is breaking down. The trucking industry runs on thin margins, and most operators generate enormous amounts of transactional data that never gets connected into a single picture. This project set out to change that.</p>
-    <p style="color:#bbb; line-height:1.8">The dataset is made up of <b>14 related tables</b> covering every part of the operation. Dimension tables: customers, drivers, trucks, trailers, routes, facilities. Fact tables: loads, trips, fuel_purchases, maintenance_records, delivery_events, safety_incidents. Aggregate tables: driver_monthly_metrics, truck_utilization_metrics. Together: ~550,000 rows spanning 2022 to 2024.</p>
-
-    <!-- 3. DATA CLEANING + VISUALIZATION -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Data Cleaning and Visualization</h4>
-    <p style="color:#bbb; line-height:1.8"><b>Data Cleaning - Power Query:</b> Removed duplicates from 14 tables and verified primary keys. Fixed data types - IDs to text, dates to date/time, revenue to decimal. Standardized text fields and trimmed spaces. Handled missing values - blanks that meant "still employed" stayed blank, blanks that meant "no charge" became 0. Built star schema relationships with central Date table so 1 slicer filters all visuals.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Data Visualization:</b> KPI cards used for headline numbers because single figures communicate fastest. Bar chart for Top 10 Customers to rank clearly. Donut chart for Customer Type to show revenue split. Line chart for incidents by month to show trends. Gauge for Fleet Utilization at 83% to show efficiency vs target.</p>
-
-    <!-- 4. OTHER 3 DASHBOARDS -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Other Dashboards</h4>
+    <h3>Logistics Operations Dashboard - Power BI</h3>
+    <p><b>Project Overview:</b> Complete logistics tracking dashboard built with Power BI. Shows delivery performance, route optimization, and operational KPIs.</p>
     <div class="modal-grid">
-      <div>
-        <img src="LOGIS1.png" alt="Drivers and Route">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px"><b>Dashboard 2:</b> Drivers and Route Performance</p>
-      </div>
-      <div>
-        <img src="LOGIS2.png" alt="Maintenance">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px"><b>Dashboard 3:</b> Maintenance and Safety</p>
-      </div>
-      <div>
-        <img src="LOGIS3.png" alt="Customer Analysis">
-        <p style="color:#ccc; font-size:0.9rem; margin-top:8px"><b>Dashboard 4:</b> Customer Analysis</p>
-      </div>
+      <div><img src="LOGIS.png" alt="Dashboard Overview"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 1:</b> Main overview - Total revenue & deliveries</p></div>
+      <div><img src="LOGIS1.png" alt="Dashboard 2"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 2:</b> Revenue & delivery performance KPIs</p></div>
+      <div><img src="LOGIS2.png" alt="Dashboard 3"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 3:</b> Regional delivery breakdown & routes</p></div>
+      <div><img src="LOGIS3.png" alt="Dashboard 4"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 4:</b> On-time delivery trends & efficiency</p></div>
     </div>
-
-    <!-- 5. INSIGHTS + RECOMMENDATION LAST -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Key Insights</h4>
-    <p style="color:#bbb; line-height:1.8"><b>1. On-time delivery is the biggest problem:</b> Only 44.6% on-time vs 90% industry standard. More than half of deliveries are late.</p>
-    <p style="color:#bbb; line-height:1.8"><b>2. Not driver shortage:</b> Pickups 67% on-time but deliveries 45%. Delays build during trip = detention at customer facilities, not lack of drivers. Fleet utilization already 83%.</p>
-    <p style="color:#bbb; line-height:1.8"><b>3. Revenue concentration:</b> Top 10 customers = $50M+. Top route NC→OR = $3.9M profit alone. Strength and risk.</p>
-    <p style="color:#bbb; line-height:1.8"><b>4. Preventable safety costs:</b> 37.6% of incidents preventable = $1.6M lost over 3 years. Training opportunity.</p>
-
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:30px">Recommendation</h4>
-    <p style="color:#bbb; line-height:1.8">Focus first on-time delivery since it threatens contracts. Data shows detention at facilities, not driver shortage, so audit wait times + renegotiate detention terms. Reprice underperforming routes using lane profit analysis. Build driver coaching from top performers. Start safety training to cut $1.6M in preventable damages. Attack root cause, not symptoms.</p>
-
-    <p style="margin-top:30px"><b>GitHub:</b> <a href="YOUR_GITHUB_LINK" target="_blank" style="color:#4ade80">View Code</a> | <b>LinkedIn:</b> <a href="YOUR_LINKEDIN_LINK" target="_blank" style="color:#4ade80">Connect</a></p>
   </div>
 </div>
 
@@ -262,105 +216,31 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 <div id="ecommerceModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
-    <h3>E-Commerce Performance Analysis - SQL + Power BI</h3>
-    <p><b>Interact with the dashboard:</b> <a href="YOUR_DASHBOARD_LINK_HERE" target="_blank" style="color:#4ade80">View Live Dashboard</a></p>
-
-    <!-- 1. OVERVIEW BIG FIRST -->
-    <div style="margin:30px 0; text-align:center">
-      <img src="ecommerce1.png" alt="E-commerce Overview Dashboard" style="width:100%; max-width:900px; border-radius:10px; border:2px solid #444">
-      <p style="color:#4ade80; font-size:1rem; margin-top:10px"><b>Overview Dashboard:</b> Total Revenue, Orders, Customers, AOV + Order Status breakdown</p>
+    <h3>E-Commerce Performance Analysis</h3>
+    <p><b>Project Overview:</b> SQL + Power BI analysis tracking revenue performance and customer behavior patterns.</p>
+    <div class="modal-grid">
+      <div>
+        <img src="ecommerce1.png.png" alt="E-commerce Dashboard">
+        <p><b>Key Findings:</b></p>
+        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue.</p>
+      </div>
     </div>
-
-    <!-- 2. INTRODUCTION -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Introduction</h4>
-    <p style="color:#bbb; line-height:1.8">This study analyzes a dataset of 1,200 e-commerce orders to understand how the business is performing across sales, order fulfillment, customers, and marketing. An online store generates a steady stream of transaction records, but on their own those records say very little. The goal of this project was to turn that raw order log into a clear picture of what is working and, more importantly, what is not.</p>
-    <p style="color:#bbb; line-height:1.8">The dataset is a single table of online orders from January 2023 to June 2025. Each row captures the full lifecycle: order ID, customer ID, order date, product, quantity, unit price, total price, shipping address, payment method, order status, tracking number, cart items, referral source, and coupon code. After cleaning, the final dataset had 14 columns after removing the CouponCode field which was 25% empty.</p>
-
-    <!-- 3. DATA CLEANING + CALCULATIONS -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Data Cleaning and Preparation - SQL</h4>
-    <p style="color:#bbb; line-height:1.8"><b>1. Removed duplicates:</b> Checked for repeated rows and verified order_id was unique. Duplicates would inflate order count and revenue.</p>
-    <p style="color:#bbb; line-height:1.8"><b>2. Fixed data types:</b> Dates set as proper date type, quantity/items as integers, unit price/total price as decimal. Correct types = correct sorting and calculations.</p>
-    <p style="color:#bbb; line-height:1.8"><b>3. Standardized text:</b> Cleaned product names, payment methods, order status, referral sources. Removed extra spaces + unified capitalization so "Credit Card" and "credit card" wouldn't split.</p>
-    <p style="color:#bbb; line-height:1.8"><b>4. Removed CouponCode column:</b> 25% of orders had no coupon because customers didn't use promotions. Since the field was largely empty and didn't drive insight, it was removed to focus on fields that matter.</p>
-    <p style="color:#bbb; line-height:1.8"><b>5. SQL calculations:</b> Calculated total revenue, average order value, unique customers, revenue by product, and yearly totals directly in SQL before loading to Power BI. This meant numbers were verified at source.</p>
-
-    <!-- 4. DATA VISUALIZATION -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Data Visualization</h4>
-    <p style="color:#bbb; line-height:1.8"><b>KPI Cards:</b> Total Revenue, Total Orders, Total Customers, Average Order Value. Cards communicate single numbers fastest and establish business size immediately.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Order Status - Column chart:</b> Compares Delivered, Shipped, Pending, Cancelled, Returned side by side. This revealed the biggest problem - only 19% delivered.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Revenue by Product - Horizontal bar chart:</b> Ranks products clearly with room for long names. Shows chair and printer each ~$196K, revenue is balanced.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Referral Source - Column chart:</b> Compares marketing channels. Instagram and email lead but no single channel dominates.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Revenue Trend - Line chart:</b> Shows decline from $0.55M in 2023 to $0.48M in 2024. 2025 is partial year only.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Slicers:</b> Payment method, Quarter, Month at top filter all visuals at once for exploration.</p>
-
-    <!-- 5. INSIGHTS -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Key Insights</h4>
-    <p style="color:#bbb; line-height:1.8"><b>1. Fulfillment crisis:</b> Only 19% of orders delivered. ~20% cancelled + ~20% returned. Far below healthy e-commerce standards.</p>
-    <p style="color:#bbb; line-height:1.8"><b>2. No repeat customers:</b> 1,189 unique customers from 1,200 orders. Average 1 order per customer. Retention problem, not acquisition problem.</p>
-    <p style="color:#bbb; line-height:1.8"><b>3. Revenue declining:</b> Dropped from $0.55M in 2023 to $0.48M in 2024. Trend is downward year-over-year.</p>
-    <p style="color:#bbb; line-height:1.8"><b>4. Balanced portfolio:</b> Revenue spread across products - chair and printer ~$196K each. No single product carries the business. Marketing channels also evenly spread.</p>
-
-    <!-- 6. RECOMMENDATION -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:30px">Recommendation</h4>
-    <p style="color:#bbb; line-height:1.8">Fix fulfillment first. Driving more traffic won't help if 81% of orders fail to deliver. Investigate why orders are cancelled/returned - stock issues, slow shipping, or mismatched expectations. Build customer retention strategy since converting even 10% of one-time buyers to repeat would massively impact revenue. Investigate high return rate as it signals gap between expectation and product. Solve delivery and retention before spending on marketing.</p>
-
-    <p style="margin-top:30px"><b>GitHub:</b> <a href="YOUR_GITHUB_LINK" target="_blank" style="color:#4ade80">View SQL Code</a> | <b>LinkedIn:</b> <a href="YOUR_LINKEDIN_LINK" target="_blank" style="color:#4ade80">Connect</a></p>
   </div>
 </div>
 
-<!-- EXCEL MODAL - UPDATED WITH MEDIUM STRUCTURE -->
+<!-- EXCEL MODAL -->
 <div id="excelModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('excelModal')">&times;</span>
-    <h3>Sales Performance Analysis - Excel</h3>
-    <p><b>View the workbook:</b> <a href="YOUR_GITHUB_LINK" target="_blank" style="color:#4ade80">Download Excel File</a></p>
-
-    <!-- 1. OVERVIEW BIG FIRST -->
-    <div style="margin:30px 0; text-align:center">
-      <img src="sales-performance-dashboard.png" alt="Sales Performance Dashboard" style="width:100%; max-width:900px; border-radius:10px; border:2px solid #444">
-      <p style="color:#4ade80; font-size:1rem; margin-top:10px"><b>Overview Dashboard:</b> Revenue, Profit, COGS, Top Products, Top Reps + Regional breakdown with slicers</p>
+    <h3>Sales Analysis Dashboard - Excel</h3>
+    <p><b>Project Overview:</b> Interactive Excel dashboard built with Pivot Tables and slicers to track sales performance and KPIs.</p>
+    <div class="modal-grid">
+      <div>
+        <img src="excel1.png.PNG" alt="Excel Dashboard">
+        <p><b>Key Metrics:</b></p>
+        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">[Type your sales analysis here Deborah]</p>
+      </div>
     </div>
-
-    <!-- 2. INTRODUCTION / OVERVIEW -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Overview</h4>
-    <p style="color:#bbb; line-height:1.8">This dashboard analyzes the sales performance of a retail business operating across four regions of Nigeria and three product categories. Using Microsoft Excel end to end, I cleaned, modelled, and visualized the data with PivotTables, PivotCharts, and slicers to uncover which products, sales representatives, cities, and regions drive the business — and where profit is being made or lost.</p>
-    <p style="color:#bbb; line-height:1.8">The analysis answers: How much revenue and profit is generated? Which products are most profitable? Who are the top-performing sales representatives? Which cities carry the highest cost of goods sold? How is the customer base trending month to month?</p>
-
-    <!-- 3. KEY METRICS -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Key Metrics Summary</h4>
-    <p style="color:#bbb; line-height:1.8"><b>Total Revenue:</b> ₦2,328,370,000</p>
-    <p style="color:#bbb; line-height:1.8"><b>Total Profit:</b> ₦465,674,000</p>
-    <p style="color:#bbb; line-height:1.8"><b>Total COGS:</b> ₦1,862,696,000</p>
-    <p style="color:#bbb; line-height:1.8"><b>Total Customers:</b> 2,098</p>
-    <p style="color:#bbb; line-height:1.8"><b>Overall Profit Margin:</b> 20%</p>
-    <p style="color:#bbb; line-height:1.8"><b>Top Product:</b> Laptop A13 (₦105,336,000 profit)</p>
-    <p style="color:#bbb; line-height:1.8"><b>Top Sales Rep:</b> Peter (₦434,805,000 revenue)</p>
-
-    <!-- 4. DATA CLEANING + TOOLS -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Data Cleaning & Tools</h4>
-    <p style="color:#bbb; line-height:1.8"><b>Power Query:</b> Removed duplicate records so orders wouldn't be counted twice. Corrected data types so dates, numbers, and currency values stored properly. Trimmed and standardized text fields like product names, cities, regions so values wouldn't split.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Calculated Fields:</b> Created profit, COGS, and profit margin formulas so dashboard could measure profitability consistently across every product, rep, city, and region.</p>
-    <p style="color:#bbb; line-height:1.8"><b>PivotTables & PivotCharts:</b> Aggregated revenue, profit, COGS by dimension. Built bar, column, pie, and line visuals to answer specific business questions.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Slicers:</b> Added interactive filters by region and product category so users can drill from national → regional → product level instantly.</p>
-
-    <!-- 5. KEY INSIGHTS -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:40px">Key Insights</h4>
-    <p style="color:#bbb; line-height:1.8"><b>Sales & Profitability:</b> ₦2.33B revenue and ₦465.7M profit = 20% margin. COGS consumed ₦1.86B, meaning 80 kobo of every naira goes to cost of goods. Margin is thin, cost control is critical.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Product Performance:</b> Laptop A13 leads with ₦105.3M profit, followed by Sofa Classic ₦69.2M and Desktop PC D21 ₦68.6M. Electronics and furniture drive profit. Blender B10 ₦6.8M and Microwave M20 ₦13.4M contribute least - need pricing review.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Sales Representatives:</b> Peter leads at ₦434.8M revenue, followed by Musa ₦397.7M and David ₦378.7M. Team performance is tightly grouped - consistent sales force, not reliance on one star.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Geographic Performance:</b> Lagos highest COGS at ₦493.8M, followed by Port Harcourt ₦486.8M and Abuja ₦458.8M. COGS spread evenly across 4 cities = broad operations, not dependence on one market.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Customer Trend:</b> 2,098 total customers, but sharp decline toward May from ~500 to just 18. This drop is the most urgent signal and needs immediate investigation.</p>
-
-    <!-- 6. RECOMMENDATION -->
-    <h4 style="color:#fff; font-size:1.5rem; margin-top:30px">Recommendations</h4>
-    <p style="color:#bbb; line-height:1.8"><b>Product Strategy:</b> Prioritize stock and marketing for Laptop A13, Sofa Classic, Desktop PC D21. Review pricing/sourcing of low-profit Blender B10 and Microwave M20, or replace with higher-margin alternatives.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Margin Improvement:</b> With COGS at 80% of revenue, small cost reductions boost profit massively. Negotiate better supplier terms, especially in high-COGS cities Lagos and Port Harcourt.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Sales Team:</b> Team is consistent. Study what Peter and Musa do well and share practices with wider team to lift overall revenue.</p>
-    <p style="color:#bbb; line-height:1.8"><b>Customer Retention - Urgent:</b> Sharp customer drop toward May is biggest concern. Investigate cause and deploy retention - follow-ups, loyalty offers, re-engagement campaigns.</p>
-
-    <p style="margin-top:30px; color:#888; font-size:0.9rem"><b>Disclaimer:</b> This analysis uses simulated data for portfolio and demonstration purposes. Project showcases Microsoft Excel for end-to-end data cleaning, analysis, and visualization.</p>
-
-    <p style="margin-top:20px"><b>GitHub:</b> <a href="YOUR_GITHUB_LINK" target="_blank" style="color:#4ade80">View Repository</a> | <b>LinkedIn:</b> <a href="YOUR_LINKEDIN_LINK" target="_blank" style="color:#4ade80">Connect</a></p>
   </div>
 </div>
 
@@ -371,4 +251,72 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 
     <!-- CARD 1 - CISCO - Image Left, Text Right -->
     <div class="ach-card">
-      <div class="ach-img
+      <div class="ach-img">
+        <img src="cisco.png.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
+      </div>
+      <div>
+        <div class="ach-date">6<span>May 2026</span></div>
+        <h3>Data Analytics Essentials</h3>
+        <p>I have successfully completed the Data Analytics Essentials program with Cisco Networking Academy. I gained hands-on skills in data analysis, SQL, Python, and building dashboards to turn raw data into actionable business insights.</p>
+        <span class="ach-link" onclick="openModal('ciscoModal')">View certificate →</span>
+      </div>
+    </div>
+
+  <!-- CARD 2 - SLA - Text Left, Image Right - GUARANTEED -->
+<div style="display:flex; gap:2.5rem; align-items:center; flex-direction:row-reverse; margin-bottom:3.5rem">
+  <div style="flex:1">
+    <div style="color:#fff; font-weight:800; font-size:3rem; line-height:1; margin-bottom:8px"><span style="font-size:0.95rem; color:#aaa; font-weight:400; display:block">May 2026</span></div>
+    <h3 style="font-size:1.6rem; font-weight:800; margin-bottom:10px">Data Fundamentals Certification</h3>
+    <p style="color:#bbb; line-height:1.7; margin-bottom:12px">I have successfully completed the program with She Leads Africa. I gained practical knowledge in data fundamentals, data cleaning, basic analysis, and working with datasets to extract meaningful insights.</p>
+    <span style="color:#aaa; font-size:0.85rem; text-decoration:none; border-bottom:1px solid #555; padding-bottom:2px; cursor:pointer" onclick="openModal('slaModal')">View certificate →</span>
+  </div>
+  <div style="flex-shrink:0; border:2px solid #fff; padding:8px; border-radius:8px; background:white">
+    <img src="sla.png" alt="SLA Certificate" onclick="openModal('slaModal')" style="width:240px; height:170px; object-fit:contain; display:block; cursor:pointer">
+  </div>
+</div>
+</section>
+ <!-- CONTACT SECTION -->
+<section id="contact">
+  <div class="contact-label">CONTACT</div>
+  <h2>Let's work with data together</h2>
+  <p>I'm open to data analyst roles and collaborations. The fastest way to reach me is email or LinkedIn.</p>
+  
+  <div class="contact-btns">
+    <a href="mailto:ekedeboraholuchi@gmail.com" class="contact-btn">✉ ekedeboraholuchi@gmail.com</a>
+    <a href="https://linkedin.com/in/deborah-eke-5aaa24285/" target="_blank" class="contact-btn">in LinkedIn</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Eke Deborah
+</footer>
+</body>
+</html>
+
+<!-- CISCO MODAL -->
+<div id="ciscoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('ciscoModal')">&times;</span>
+    <img src="cisco.png.png" alt="Data Analytics Essentials Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <h3>Data Analytics Essentials</h3>
+    <p><b>Issued by:</b> Cisco Networking Academy</p>
+    <p><b>Date:</b> 6 May 2026</p>
+    <p><b>What I learned:</b> Data collection and cleaning, SQL queries, Python for analysis, data visualization, and building interactive dashboards to drive business decisions.</p>
+  </div>
+</div>
+
+<!-- SLA MODAL -->
+<div id="slaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('slaModal')">&times;</span>
+    <img src="sla.png" alt="Data Fundamentals Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <h3>Data Fundamentals Certification</h3>
+    <p><b>Issued by:</b> She Leads Africa</p>
+    <p><b>Date:</b> May 2026</p>
+    <p><b>What I learned:</b> Data fundamentals, data cleaning techniques, basic statistical analysis, and working with real datasets to identify trends and extract actionable insights.</p>
+  </div>
+</div>
+
+</body>
+</html>
