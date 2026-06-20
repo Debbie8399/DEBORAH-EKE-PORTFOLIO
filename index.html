@@ -72,6 +72,22 @@
     .hero-text h1{font-size:3rem}
     .about-wrap{grid-template-columns:1fr}
   }
+  #achievements h2{font-size:3rem;font-weight:800;margin-bottom:50px;text-align:center}
+.achievements-grid{display:grid;grid-template-columns:1fr;gap:3.5rem;max-width:950px;margin:0 auto}
+.ach-card{display:flex;gap:2.5rem;align-items:center}
+.ach-card.reverse{flex-direction:row-reverse}
+.ach-img{flex-shrink:0;border:2px solid #fff;padding:8px;border-radius:8px;background:white}
+.ach-img img{width:240px;height:170px;object-fit:contain;display:block;cursor:pointer}
+.ach-date{color:#fff;font-weight:800;font-size:3rem;line-height:1;margin-bottom:8px}
+.ach-date span{font-size:0.95rem;color:#aaa;font-weight:400;display:block}
+.ach-card h3{font-size:1.6rem;font-weight:800;margin-bottom:10px}
+.ach-card p{color:#bbb;line-height:1.7;margin-bottom:12px}
+.ach-link{color:#aaa;font-size:0.85rem;text-decoration:none;border-bottom:1px solid #555;padding-bottom:2px;cursor:pointer}
+.ach-link:hover{color:#fff;border-color:#fff}
+@media(max-width:900px){
+.ach-card,.ach-card.reverse{flex-direction:column;text-align:center;gap:1.5rem}
+.ach-img img{width:200px;height:140px}
+.ach-date{font-size:2.2rem}
 </style>
 </head>
 <body>
