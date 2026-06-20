@@ -40,8 +40,7 @@
   .proj-card h3{font-size:1.6rem;margin-bottom:15px}
   .proj-card p{color:#aaa;line-height:1.7;margin-bottom:20px}
 
- .project-link{display:inline-block; margin-top:20px; padding:12px 32px; background:transparent; border:2px solid #fff; color:#fff; border-radius:0; text-decoration:none; font-weight:700; font-size:0.85rem; letter-spacing:1px; transition:0.3s}
-.project-link:hover{background:#fff; color:#0a0a0a}
+  .proj-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;margin-top:15px}
 
   .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
   .modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
@@ -134,32 +133,23 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <button class="filter" data-filter="excel">Excel</button>
   </div>
 
-<div class="proj-card show" data-category="powerbi">
-    <h3>Logistics Operations Analysis - Power BI</h3>
-    <a href="YOUR_LOGISTICS_LINK_HERE" target="_blank">
-      <img src="Logistics.png.jpg" alt="Logistics Dashboard">
-    </a>
+  <div class="proj-card show" data-category="powerbi">
+    <h3>Logistics Operations Dashboard - Power BI</h3>
+    <img src="Logistics.png.jpg" alt="Logistics Dashboard" onclick="openModal('logisModal')">
     <p>Power BI dashboard presenting KPIs on revenue, efficiency, and delivery performance. Cleaned data in Power Query, built relationships and DAX measures to analyze operational patterns.</p>
-    <a href="YOUR_LOGISTICS_LINK_HERE" target="_blank" class="project-link">VIEW PROJECT</a>
-  </div>
-  <div class="proj-card show" data-category="powerbi sql">
-    <h3>E-Commerce Performance Analysis</h3>
-    <a href="YOUR_ECOMMERCE_LINK_HERE" target="_blank">
-      <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard">
-    </a>
-    <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources.</p>
-    <p><b>Technologies:</b> SQL, Power BI</p>
-    <a href="YOUR_ECOMMERCE_LINK_HERE" target="_blank" class="project-link">VIEW PROJECT</a>
-  </div>
   </div>
 
-<div class="proj-card show" data-category="excel">
+  <div class="proj-card show" data-category="powerbi sql">
+    <h3>E-Commerce Performance Analysis</h3>
+    <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard" onclick="openModal('ecommerceModal')">
+    <p>Analyzed e-commerce sales data to track revenue performance and customer behavior patterns. Used SQL to clean and extract data, then built an interactive Power BI dashboard. Identified top performing products and referral sources.</p>
+    <p><b>Technologies:</b> SQL, Power BI</p>
+  </div>
+
+  <div class="proj-card show" data-category="excel">
     <h3>Sales Analysis Dashboard - Excel</h3>
-    <a href="YOUR_SALES_LINK_HERE" target="_blank">
-      <img src="sales.png.jpg" alt="Sales Dashboard">
-    </a>
+    <img src="sales.png.jpg" alt="Sales Dashboard" onclick="openModal('excelModal')">
     <p>Cleaned and organized sales data in Excel, then built an interactive dashboard with Pivot Tables and slicers. Tracked KPIs, sales trends, and regional performance for data-driven decisions.</p>
-    <a href="YOUR_SALES_LINK_HERE" target="_blank" class="project-link">VIEW PROJECT</a>
   </div>
 </section>
 
