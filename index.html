@@ -244,34 +244,7 @@ window.onclick = function(event){
     </div>
   </div>
 </div>
- <!-- ACHIEVEMENTS SECTION -->
-<section class="projects" id="achievements">
-  <h2>Achievements</h2>
-  <div class="achievements-grid">
-
-    <div class="achievement-card" onclick="openModal('ciscoModal')">
-      <img src="cisco.png.png" alt="Cisco Certificate">
-      <div>
-        <div class="achievement-date">[Day]<br><span>[Month Year]</span></div>
-        <h3 style="margin:0.5rem 0 0.3rem 0">Cisco Certificate</h3>
-        <p style="color:#ccc; font-size:0.9rem; margin:0">Cisco. [What you learned]</p>
-        <p style="color:#ff69b4; font-size:0.85rem; margin-top:0.5rem">View certificate →</p>
-      </div>
-    </div>
-
-    <div class="achievement-card" onclick="openModal('slaModal')">
-      <img src="sla.png" alt="SLA Certificate">
-      <div>
-        <div class="achievement-date">[Day]<br><span>[Month Year]</span></div>
-        <h3 style="margin:0.5rem 0 0.3rem 0">SLA Certificate</h3>
-        <p style="color:#ccc; font-size:0.9rem; margin:0">[Organization]. [What you learned]</p>
-        <p style="color:#ff69b4; font-size:0.85rem; margin-top:0.5rem">View certificate →</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+<!-- ACHIEVEMENTS SECTION -->
 <!-- CISCO MODAL -->
 <div id="ciscoModal" class="modal">
   <div class="modal-content">
@@ -292,7 +265,39 @@ window.onclick = function(event){
     <p><b>Issued by:</b> [Organization]</p>
     <p><b>Date:</b> [Full date]</p>
     <p><b>Skills gained:</b> [2-3 lines]</p>
+  </div><!-- ACHIEVEMENTS SECTION -->
+<section id="achievements">
+  <h2>Achievements</h2>
+  <div class="achievements-grid">
+
+    <!-- CARD 1 - CISCO - Image Right, Text Left -->
+    <div class="ach-card reverse">
+      <div>
+        <div class="ach-date">06<span>May 2026</span></div>
+        <h3>Data Analytics Essentials</h3>
+        <p>I have successfully completed the Data Analytics Essentials program with Cisco Networking Academy. I gained hands-on skills in data analysis, SQL, Python, and building dashboards to turn raw data into actionable business insights.</p>
+        <span class="ach-link" onclick="openModal('ciscoModal')">View certificate →</span>
+      </div>
+      <div class="ach-img">
+        <img src="cisco.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
+      </div>
+    </div>
+
+    <!-- CARD 2 - SLA - Image Left, Text Right -->
+    <div class="ach-card">
+      <div class="ach-img">
+        <img src="sla.png" alt="SLA Certificate" onclick="openModal('slaModal')">
+      </div>
+      <div>
+        <div class="ach-date">[Day]<span>May 2026</span></div>
+        <h3>Data Fundamentals Certification</h3>
+        <p>I have successfully completed the program with She Leads Africa. I gained practical knowledge in data fundamentals, data cleaning, basic analysis, and working with datasets to extract meaningful insights.</p>
+        <span class="ach-link" onclick="openModal('slaModal')">View certificate →</span>
+      </div>
+    </div>
+
   </div>
+</section>
 </div>
 </body>
 </html>
