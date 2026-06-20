@@ -42,9 +42,6 @@
 
   .proj-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;margin-top:15px}
 
-  .project-link{display:inline-block; margin-top:15px; padding:10px 20px; background:#1a1a1a; border:1px solid #333; color:#fff; border-radius:6px; text-decoration:none; font-weight:600; transition:0.3s}
-  .project-link:hover{border-color:#4ade80; transform:translateY(-2px)}
-
   .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto}
   .modal-content{background:#111;margin:5% auto;padding:40px;border-radius:12px;max-width:900px;border:1px solid #333}
   .close{color:#aaa;float:right;font-size:28px;font-weight:bold;cursor:pointer}
@@ -102,7 +99,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <h1>EKE<br>DEBORAH</h1>
     <div class="title">DATA ANALYST</div>
     <p>Hi, I'm Eke Deborah, a Data Analyst based in Lagos. I turn complex datasets into clear dashboards that help organizations make faster, smarter decisions using Excel, SQL, Power BI, and Python.</p>
-    <a href="Deborah%20Cv.pdf" target="_blank" class="btn-download">View CV 👁</a>
+    <a href="Deborah%20Cv.pdf" download class="btn-download">Download CV ⬇</a>
   </div>
 </section>
 
@@ -136,14 +133,10 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <button class="filter" data-filter="excel">Excel</button>
   </div>
 
-  <!-- LOGISTICS CARD - ONLY 2 CHANGES HERE -->
   <div class="proj-card show" data-category="powerbi">
     <h3>Logistics Operations Dashboard - Power BI</h3>
-    <a href="YOUR_DASHBOARD_LINK_HERE" target="_blank">
-      <img src="Logistics.png.jpg" alt="Logistics Dashboard">
-    </a>
+    <img src="Logistics.png.jpg" alt="Logistics Dashboard" onclick="openModal('logisModal')">
     <p>Power BI dashboard presenting KPIs on revenue, efficiency, and delivery performance. Cleaned data in Power Query, built relationships and DAX measures to analyze operational patterns.</p>
-    <a href="YOUR_DASHBOARD_LINK_HERE" target="_blank" class="project-link">View Project →</a>
   </div>
 
   <div class="proj-card show" data-category="powerbi sql">
@@ -227,7 +220,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <p><b>Project Overview:</b> SQL + Power BI analysis tracking revenue performance and customer behavior patterns.</p>
     <div class="modal-grid">
       <div>
-        <img src="ecommerce1.png" alt="E-commerce Dashboard">
+        <img src="ecommerce1.png.png" alt="E-commerce Dashboard">
         <p><b>Key Findings:</b></p>
         <p style="color:#ccc; font-size:0.85rem; line-height:1.6">Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue.</p>
       </div>
@@ -259,7 +252,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <!-- CARD 1 - CISCO - Image Left, Text Right -->
     <div class="ach-card">
       <div class="ach-img">
-        <img src="cisco.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
+        <img src="cisco.png.png" alt="Cisco Certificate" onclick="openModal('ciscoModal')">
       </div>
       <div>
         <div class="ach-date">6<span>May 2026</span></div>
@@ -305,7 +298,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 <div id="ciscoModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('ciscoModal')">&times;</span>
-    <img src="cisco.png" alt="Data Analytics Essentials Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <img src="cisco.png.png" alt="Data Analytics Essentials Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
     <h3>Data Analytics Essentials</h3>
     <p><b>Issued by:</b> Cisco Networking Academy</p>
     <p><b>Date:</b> 6 May 2026</p>
@@ -317,7 +310,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 <div id="slaModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('slaModal')">&times;</span>
-    <img src="sla.png" alt="Data Fundamentals Certification" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
+    <img src="sla.png" alt="Data Fundamentals Certificate" style="width:100%; background:white; padding:1rem; border-radius:10px; margin-bottom:1rem;">
     <h3>Data Fundamentals Certification</h3>
     <p><b>Issued by:</b> She Leads Africa</p>
     <p><b>Date:</b> May 2026</p>
