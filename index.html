@@ -396,18 +396,72 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 
 <!-- EXCEL MODAL -->
 <div id="excelModal" class="modal">
-  <div class="modal-content">
+  <div class="modal-content" style="max-width:800px; padding:50px">
     <span class="close" onclick="closeModal('excelModal')">&times;</span>
-    <h3>Sales Analysis Dashboard - Excel</h3>
-    <p><b>Project Overview:</b> Interactive Excel dashboard built with Pivot Tables and slicers to track sales performance and KPIs.</p>
-    <div class="modal-grid">
-      <div>
-        <img src="excel1.png.PNG" alt="Excel Dashboard">
-        <p><b>Key Metrics:</b></p>
-        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">[Type your sales analysis here Deborah]</p>
-      </div>
+    
+    <!-- Title -->
+    <h1 style="font-size:2.8rem; font-weight:800; line-height:1.2; margin-bottom:12px">Sales Performance Dashboard Analysis using Excel</h1>
+    <p style="color:#aaa; font-size:1.1rem; margin-bottom:8px">A comprehensive Excel-based visualization analyzing sales, profit, and key metrics for a multi-region retail company</p>
+    <p style="color:#4ade80; font-size:0.95rem; margin-bottom:40px">View the file: <a href="#" style="color:#4ade80; text-decoration:underline">Download Excel</a></p>
+    
+    <!-- Single Dashboard Image -->
+    <img src="excel1.png.PNG" alt="Sales Performance Analysis" style="width:100%; border-radius:4px; margin:30px 0 10px 0">
+    <p style="color:#888; font-size:0.85rem; text-align:center; margin-bottom:40px"><i>Excel dashboard showing revenue, profit, and performance metrics across products, regions, and sales reps</i></p>
+    
+    <!-- Key Metrics Summary -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Key Metrics Summary</h2>
+    <ul style="color:#ddd; line-height:2; font-size:1.05rem; margin-bottom:40px; padding-left:25px">
+      <li><b>Total Revenue:</b> ₦2,328,370,000</li>
+      <li><b>Total Profit:</b> ₦465,674,000</li>
+      <li><b>Total Cost of Goods Sold:</b> ₦1,862,696,000</li>
+      <li><b>Total Customers:</b> 2,098</li>
+      <li><b>Overall Profit Margin:</b> 20%</li>
+    </ul>
+    
+    <!-- Data Cleaning -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Data Cleaning and Preparation</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:25px">Before any analysis, the raw sales data was cleaned and prepared in Microsoft Excel using Power Query. The following steps were applied:</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>1. Removed duplicate records.</b> The dataset was checked for repeated rows so that no sale would be counted twice and totals would not be inflated.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>2. Fixed data types.</b> Dates, revenue, COGS, and profit columns were set to their correct formats so calculations and charts would behave properly.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>3. Standardized text values.</b> Extra spaces were trimmed and capitalization of product names, cities, and regions was unified so the same value would not appear as two separate categories.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>4. Created calculated fields.</b> Profit, COGS, and profit margin measures were built to measure profitability consistently across every product, sales rep, city, and region.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px"><b>5. Built PivotTables and PivotCharts.</b> The clean data was summarized and interactive slicers were connected for region and product category to enable dynamic filtering.</p>
+    
+    <!-- Sales & Profit Analysis -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Sales & Profit Analysis</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px">The dashboard was built using pivot tables and charts to answer key business questions at a glance. Each visual was chosen for the type of comparison it communicates best.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Profit by Product — bar chart.</b> A bar chart ranks products clearly to show which items drive the most profit. Laptop A13 is the most profitable product, generating ₦105,336,000 — far ahead of every other item. Sofa Classic at ₦69,248,000 and Desktop PC D21 at ₦68,640,000 follow as strong performers. Blender B10 at ₦6,870,000 and Microwave M20 at ₦13,416,000 are the lowest contributors, highlighting potential areas for pricing or promotion review.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Sales Representative Performance — column chart.</b> A column chart compares revenue side by side across the team. Peter leads with ₦434,805,000 in revenue. Musa at ₦397,665,000 and David at ₦378,660,000 follow closely, with the team tightly grouped — a sign of a consistent, capable sales force rather than reliance on a single performer.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Cost by City — column chart.</b> A column chart shows COGS distribution across locations. Lagos carries the highest cost of goods sold at ₦493,812,000, followed by Port Harcourt at ₦486,788,000 and Abuja at ₦458,784,000. COGS is spread fairly evenly across the cities, indicating broad operations rather than dependence on one market.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px"><b>Customer Trend — line chart.</b> A line chart displays change over time. The business serves 2,098 customers, but the monthly trend shows a sharp decline toward the end of the period, falling from around 500 customers to a small handful. This steep drop is the most urgent signal in the data and warrants immediate investigation.</p>
+    
+    <!-- Insights -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Key Insights and Recommendations</h2>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>1. Product performance varies significantly.</b> Focus stock and marketing on the clear profit leaders — Laptop A13, Sofa Classic, and Desktop PC D21. Review the pricing or sourcing of low-profit products such as Blender B10 and Microwave M20, or replace them with higher-margin alternatives.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>2. Margin improvement opportunity exists.</b> With COGS consuming roughly 80% of revenue, even a small reduction in the cost of goods would meaningfully raise profit. Negotiate better supplier terms, particularly in high-COGS cities like Lagos and Port Harcourt.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>3. Sales team performance is consistent.</b> The sales team performs consistently. Study what Peter and Musa do well and share those practices across the team to lift overall revenue.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px"><b>4. Customer retention is urgent.</b> The sharp drop in monthly customers is the single biggest concern. Investigate the cause behind the decline and put retention measures — follow-ups, loyalty offers, and re-engagement campaigns — in place to reverse it.</p>
+    
+    <!-- Links -->
+    <div style="border-top:1px solid #333; padding-top:30px; margin-top:50px">
+      <p style="color:#ccc; font-size:1rem"><b>View repository:</b> <a href="#" style="color:#4ade80; text-decoration:underline">GitHub</a></p>
+      <p style="color:#ccc; font-size:1rem"><b>Connect:</b> <a href="https://linkedin.com/in/deborah-eke-5aaa24285/" target="_blank" style="color:#4ade80; text-decoration:underline">LinkedIn</a></p>
     </div>
   </div>
+</div>
 </div>
 
 <!-- ACHIEVEMENTS SECTION -->
