@@ -204,14 +204,52 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 <div id="logisModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('logisModal')">&times;</span>
-    <h3>Logistics Operations Dashboard - Power BI</h3>
-    <p><b>Project Overview:</b> Complete logistics tracking dashboard built with Power BI. Shows delivery performance, route optimization, and operational KPIs.</p>
+    
+    <h2 style="font-size:2.5rem; font-weight:800; margin-bottom:10px">Logistics Operations Dashboard</h2>
+    <p style="color:#888; font-size:0.95rem; margin-bottom:25px">An end-to-end analysis of a US trucking operation — from raw data to interactive dashboard</p>
+    
+    <!-- 1. BIG Overview Image FIRST -->
+    <img src="LOGIS.png" alt="Dashboard Overview" style="width:100%; border-radius:8px; margin-bottom:30px">
+    
+    <!-- 2. Write-up -->
+    <h3 style="font-size:1.6rem; margin-top:30px; margin-bottom:15px">Introduction</h3>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">This study analyzes three years of operational data from a US trucking company in order to understand where the business is making money, where it is losing money, and where its service quality is breaking down...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The dataset is made up of fourteen related tables that together describe every part of the operation...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, two aggregate tables hold pre-summarized monthly figures...</p>
+    
+    <!-- Data Cleaning -->
+    <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Data Cleaning and Preparation</h3>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">Before any analysis could begin, the fourteen raw tables had to be cleaned and prepared in Power Query...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">Each column was assigned the proper data type by hand...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">All relationships were set as one-to-many with a single filter direction...</p>
+    
+    <!-- 3. Other 3 Dashboards BEFORE Insights -->
+    <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Dashboard Views</h3>
     <div class="modal-grid">
-      <div><img src="LOGIS.png" alt="Dashboard Overview"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 1:</b> Main overview - Total revenue & deliveries</p></div>
-      <div><img src="LOGIS1.png" alt="Dashboard 2"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 2:</b> Revenue & delivery performance KPIs</p></div>
-      <div><img src="LOGIS2.png" alt="Dashboard 3"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 3:</b> Regional delivery breakdown & routes</p></div>
-      <div><img src="LOGIS3.png" alt="Dashboard 4"><p style="color:#ccc; font-size:0.9rem; margin-top:8px;"><b>Dashboard 4:</b> On-time delivery trends & efficiency</p></div>
+      <div><img src="LOGIS1.png" alt="Revenue KPIs"></div>
+      <div><img src="LOGIS2.png" alt="Regional Breakdown"></div>
+      <div><img src="LOGIS3.png" alt="Delivery Trends"></div>
+      <div style="display:none"></div>
     </div>
+    
+    <!-- 4. Insights LAST -->
+    <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Insights</h3>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The analysis revealed that on-time delivery is the company's biggest problem...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The data also showed that the business is heavily concentrated...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, a large share of safety incidents turned out to be preventable...</p>
+    
+    <!-- Recommendation -->
+    <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Recommendation</h3>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The company should focus first on the on-time delivery problem...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:30px">The company should also introduce a safety training program...</p>
+    
+    <!-- Links -->
+    <div style="border-top:1px solid #333; padding-top:20px; margin-top:30px">
+      <a href="#" style="color:#4ade80; text-decoration:none; margin-right:25px">View Power BI Dashboard →</a>
+      <a href="https://linkedin.com/in/deborah-eke-5aaa24285/" target="_blank" style="color:#4ade80; text-decoration:none">View on LinkedIn →</a>
+    </div>
+  </div>
+</div>
   </div>
 </div>
 
