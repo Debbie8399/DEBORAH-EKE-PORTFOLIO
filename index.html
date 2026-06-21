@@ -199,7 +199,6 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     }
   }
 </script>
-
 <!-- LOGISTICS MODAL -->
 <div id="logisModal" class="modal">
   <div class="modal-content">
@@ -207,21 +206,38 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     
     <h2 style="font-size:2.5rem; font-weight:800; margin-bottom:10px">Logistics Operations Dashboard</h2>
     <p style="color:#888; font-size:0.95rem; margin-bottom:25px">An end-to-end analysis of a US trucking operation — from raw data to interactive dashboard</p>
+    <p style="color:#4ade80; font-size:0.9rem; margin-bottom:30px">Interact with the dashboard here: <a href="#" style="color:#4ade80">[your Power BI / novyPro link]</a></p>
     
     <!-- 1. BIG Overview Image FIRST -->
     <img src="LOGIS.png" alt="Dashboard Overview" style="width:100%; border-radius:8px; margin-bottom:30px">
     
-    <!-- 2. Write-up -->
+    <!-- 2. FULL Write-up -->
     <h3 style="font-size:1.6rem; margin-top:30px; margin-bottom:15px">Introduction</h3>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">This study analyzes three years of operational data from a US trucking company in order to understand where the business is making money, where it is losing money, and where its service quality is breaking down...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The dataset is made up of fourteen related tables that together describe every part of the operation...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, two aggregate tables hold pre-summarized monthly figures...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">This study analyzes three years of operational data from a US trucking company in order to understand where the business is making money, where it is losing money, and where its service quality is breaking down. The trucking industry runs on very thin margins, and most operators generate enormous amounts of transactional data that never gets connected into a single, clear picture. This project set out to change that by bringing everything together into one analytical model and one interactive dashboard.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The dataset is made up of fourteen related tables that together describe every part of the operation. Six of these are dimension tables, which describe the "who, what, and where" of the business. The customers table holds customer accounts, their types, and their contract details. The drivers table contains driver profiles, years of experience, and home terminals. The trucks table describes the fleet, including make, model year, and status, while the trailers table lists trailer inventory by type and length. The routes table defines each origin-to-destination lane along with its typical distance, and the facilities table records the terminals and warehouses where loads are picked up and delivered, including their locations.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The next six are fact tables, which record what actually happened during operations. The loads table captures every customer order with its revenue, weight, and assigned route. The trips table records the actual movement of each load, including the miles driven and fuel used. The fuel_purchases table logs every individual fuel transaction across the fleet, and the maintenance_records table tracks every service and repair event for each truck. The delivery_events table contains the pickup and delivery scans, including detention time and on-time flags, and the safety_incidents table records accidents and violations along with their cost and fault details.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, two aggregate tables hold pre-summarized monthly figures. The driver_monthly_metrics table summarizes each driver's monthly performance, and the truck_utilization_metrics table summarizes each truck's monthly utilization. Altogether, these fourteen tables contain roughly 550,000 rows of operational records spanning 2022 to 2024.</p>
     
     <!-- Data Cleaning -->
     <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Data Cleaning and Preparation</h3>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">Before any analysis could begin, the fourteen raw tables had to be cleaned and prepared in Power Query...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">Each column was assigned the proper data type by hand...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">All relationships were set as one-to-many with a single filter direction...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The main tool used for this project is Power BI. Before any analysis could begin, the fourteen raw tables had to be cleaned and prepared in Power Query, and this involved several steps.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The first step was removing duplicate records. Each table was checked for duplicate rows, and the primary key columns, such as customer ID, driver ID, and truck ID, were checked to confirm that every identifier was unique. Removing duplicates matters because duplicated records would inflate counts and totals and quietly distort the entire analysis.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The second step was fixing the data types. Power Query's automatic type detection is not always correct, so each column was assigned the proper type by hand. Identifier columns were set to text, date columns were set to date or date-and-time, revenue and cost columns were set to decimal numbers, and quantity columns were set to whole numbers. Getting the data types right is essential because they control how relationships connect and how calculations behave later on.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The third step was standardizing the text columns. Fields such as city names, order statuses, and category labels were trimmed of extra spaces and made consistent in their capitalization, so that values would match correctly across the tables. For example, "Delivery" and "DELIVERY" were unified so they would not be treated as two different categories.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The fourth step was handling missing values. Every column was reviewed for blanks, and the decision about what to do depended on what the blank actually meant. Where a blank carried real information, such as a driver with no termination date who is therefore still employed, the value was left as it was. Where a blank should be understood as zero, such as a load with no extra charges, it was filled with zero so that calculations would still work properly.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">The fifth and final step was creating the relationships between the tables. Once the data was clean, relationships were built in the Model view to connect everything together. Each fact table was linked to its dimension tables through their key columns. The loads table, for instance, connects to the customers table through customer ID and to the routes table through route ID, while the trips table connects to the drivers, trucks, and trailers tables. A central date table was also created and connected to every table that contains a date, so that a single date slicer can filter the entire model at once. All of the relationships were set as one-to-many with a single filter direction, which forms a clean star schema. With the data cleaned and the relationships in place, the model was finally ready for analysis.</p>
+    
+    <!-- Data Visualization -->
+    <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Data Visualization</h3>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The Overview page of the dashboard was designed to answer the most important questions at a single glance and then allow the user to drill deeper. Every visual on the page was chosen deliberately for the kind of information it communicates best.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">For the headline numbers, I used KPI cards showing total revenue, total profit, total miles, average miles per gallon, and profit margin. Cards were the right choice here because a single large figure is the fastest possible way to communicate a key metric, and together these five cards give an immediate sense of the operation's scale and overall health before the user examines any chart.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">To show the most valuable customers, I used a horizontal bar chart of the top ten customers by revenue. A horizontal bar chart works well for ranking because it orders the items clearly and leaves enough room for long customer names to remain readable. It immediately shows which customers matter most and how concentrated the revenue is among the leading accounts.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">To show how revenue is divided across the three customer types of Contract, Spot, and Dedicated, I used a donut chart. A donut chart is effective for showing parts of a whole when there are only a few categories, which makes the overall revenue mix easy to understand at a glance.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">To track safety over time, I used a line chart of total incidents by month. A line chart is the clearest way to show a trend across time, and plotting incidents month by month reveals whether safety events are rising, falling, or following a seasonal pattern across the year.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">To present fleet utilization, I used a gauge. A gauge is ideal for a metric that should be read against its full potential, since it answers the question of how close the fleet is to being fully used. At eighty-three percent, the gauge shows at once that the fleet is being used efficiently. I used a second gauge to display the average revenue per load, which gives a quick read on how healthy the pricing is on each individual order.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">To compare the cost of different kinds of safety events, I used a column chart of vehicle damage cost by incident type. A column chart makes it easy to compare values side by side, so the most expensive incident types, such as equipment damage and accidents, stand out clearly.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">At the bottom of the page I added a monthly summary table showing revenue, profit, fuel cost, maintenance cost, and miles. A table is the best choice when exact figures matter and when several related numbers need to be compared row by row, so it serves the users who want precise values rather than visual approximations. Alongside it, a line chart of average miles per gallon by month shows how fuel efficiency changed across the year and helps identify any months where mileage dropped.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, I placed year and quarter slicers at the top of the page so that the entire dashboard can be filtered by time period. Because every table is connected to the central date table, selecting a year or a quarter updates every visual on the page at the same time. The page as a whole was arranged so that the most important numbers sit at the top, the supporting analysis sits in the middle, and the exact figures sit at the bottom, guiding the reader naturally from summary to detail.</p>
     
     <!-- 3. Other 3 Dashboards BEFORE Insights -->
     <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Dashboard Views</h3>
@@ -234,21 +250,25 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     
     <!-- 4. Insights LAST -->
     <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Insights</h3>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The analysis revealed that on-time delivery is the company's biggest problem...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The data also showed that the business is heavily concentrated...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, a large share of safety incidents turned out to be preventable...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The analysis revealed that on-time delivery is the company's biggest problem. Only about forty-five percent of deliveries arrived on time, which is far below the industry standard of ninety percent or more. With more than half of all deliveries arriving late, this is the single most important issue the data uncovered.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">Importantly, this lateness does not appear to be caused by a shortage of drivers. Pickups were on time about sixty-seven percent of the time, but deliveries dropped to forty-five percent. That gap suggests delays accumulate during the trip, most likely because of detention at customer facilities, rather than because there are too few drivers. Fleet utilization was already high at eighty-three percent, which supports this conclusion.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The data also showed that the business is heavily concentrated in a small number of customers and routes. The top ten customers generated more than fifty million dollars in revenue, and the single most profitable route, running from North Carolina to Oregon, produced almost four million dollars in profit on its own. This concentration is both a strength, because the company knows exactly who its most valuable relationships are, and a risk, because losing even one major customer would have a significant impact.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:25px">Finally, a large share of safety incidents turned out to be preventable. Roughly thirty-eight percent of incidents were preventable, and they cost about one and a half million dollars in damages over the three years, which represents a clear opportunity to reduce costs through better driver training.</p>
     
     <!-- Recommendation -->
     <h3 style="font-size:1.6rem; margin-top:40px; margin-bottom:15px">Recommendation</h3>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The company should focus first on the on-time delivery problem...</p>
-    <p style="color:#ccc; line-height:1.8; margin-bottom:30px">The company should also introduce a safety training program...</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:15px">The company should focus first on the on-time delivery problem, because it affects every customer and puts contract renewals at risk. Since the data points to facility detention rather than a lack of capacity, the most effective first step is to audit wait times at the worst-performing facilities and renegotiate detention terms with those customers, which is a low-cost action that does not require hiring anyone. Underperforming routes should then be repriced using the lane profitability analysis, and a driver coaching program should be built around the habits of the top performers in order to improve both fuel efficiency and on-time rates.</p>
+    <p style="color:#ccc; line-height:1.8; margin-bottom:30px">The company should also introduce a safety training program to reduce the preventable incidents that are costing well over a million dollars in damages. Each of these recommendations addresses a root cause that the data revealed, rather than simply treating a symptom.</p>
     
     <!-- Links -->
     <div style="border-top:1px solid #333; padding-top:20px; margin-top:30px">
-      <a href="#" style="color:#4ade80; text-decoration:none; margin-right:25px">View Power BI Dashboard →</a>
-      <a href="https://linkedin.com/in/deborah-eke-5aaa24285/" target="_blank" style="color:#4ade80; text-decoration:none">View on LinkedIn →</a>
+      <p style="color:#ccc; margin-bottom:10px"><b>View repository:</b> <a href="#" style="color:#4ade80">[your GitHub link]</a></p>
+      <p style="color:#ccc"><b>Visit my LinkedIn:</b> <a href="https://linkedin.com/in/deborah-eke-5aaa24285/" target="_blank" style="color:#4ade80">deborah-eke-5aaa24285</a></p>
     </div>
   </div>
+</div>
+
+
 </div>
   </div>
 </div>
