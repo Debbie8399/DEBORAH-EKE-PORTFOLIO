@@ -39,8 +39,6 @@
   .proj-card:hover{border-color:#444;transform:translateY(-5px)}
   .proj-card h3{font-size:1.6rem;margin-bottom:15px}
   .proj-card p{color:#aaa;line-height:1.7;margin-bottom:20px}
-  .proj-card a{display:inline-block;margin-top:12px;padding:7px 20px;border:1px solid #555;color:#fff;text-decoration:none;font-size:0.8rem}
-.proj-card a:hover{background:#fff;color:#0a0a0a}
 
   .proj-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;cursor:pointer;margin-top:15px}
 
@@ -135,12 +133,12 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <button class="filter" data-filter="excel">Excel</button>
   </div>
 
- <div class="proj-card show" data-category="powerbi">
+  <div class="proj-card show" data-category="powerbi">
     <h3>Logistics Operations Dashboard - Power BI</h3>
-    <img src="Logistics.png.jpg" alt="Logistics Dashboard">onclick="openModal('logisModal')">
+    <img src="Logistics.png.jpg" alt="Logistics Dashboard" onclick="openModal('logisModal')">
     <p>Power BI dashboard presenting KPIs on revenue, efficiency, and delivery performance. Cleaned data in Power Query, built relationships and DAX measures to analyze operational patterns.</p>
-  
   </div>
+
   <div class="proj-card show" data-category="powerbi sql">
     <h3>E-Commerce Performance Analysis</h3>
     <img src="ecommerce.png.jpg" alt="Ecommerce Dashboard" onclick="openModal('ecommerceModal')">
