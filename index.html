@@ -320,16 +320,85 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 
 <!-- ECOMMERCE MODAL -->
 <div id="ecommerceModal" class="modal">
-  <div class="modal-content">
+  <div class="modal-content" style="max-width:800px; padding:50px">
     <span class="close" onclick="closeModal('ecommerceModal')">&times;</span>
-    <h3>E-Commerce Performance Analysis</h3>
-    <p><b>Project Overview:</b> SQL + Power BI analysis tracking revenue performance and customer behavior patterns.</p>
-    <div class="modal-grid">
-      <div>
-        <img src="ecommerce1.png.png" alt="E-commerce Dashboard">
-        <p><b>Key Findings:</b></p>
-        <p style="color:#ccc; font-size:0.85rem; line-height:1.6">Type your analysis here Deborah. Example: Analyzed 15,000+ orders worth $2.3M. Top product category was Electronics with 32% of revenue.</p>
-      </div>
+    
+    <!-- Title -->
+    <h1 style="font-size:2.8rem; font-weight:800; line-height:1.2; margin-bottom:12px">E-Commerce Performance Analysis using SQL and Power BI</h1>
+    <p style="color:#aaa; font-size:1.1rem; margin-bottom:8px">An end-to-end analysis of an online retail operation — cleaned and calculated in SQL, then visualized in Power BI</p>
+    <p style="color:#4ade80; font-size:0.95rem; margin-bottom:40px">Interact with the dashboard: <a href="#" style="color:#4ade80; text-decoration:underline">View on Power BI</a></p>
+    
+    <!-- Big Overview Image -->
+    <img src="ECOM.png" alt="Dashboard Overview" style="width:100%; border-radius:4px; margin:30px 0">
+    <p style="color:#888; font-size:0.85rem; text-align:center; margin-top:-20px; margin-bottom:40px"><i>Performance dashboard overview showing key e-commerce metrics</i></p>
+    
+    <!-- Introduction -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Introduction</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px">This study analyzes a dataset of 1,200 e-commerce orders in order to understand how the business is performing across sales, order fulfillment, customers, and marketing. An online store generates a steady stream of transaction records, but on their own those records say very little. The goal of this project was to turn that raw order log into a clear picture of what is working in the business and, more importantly, what is not.</p>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px">The dataset is a single table of online orders, with each row representing one order placed on the store. It captures the full lifecycle of a transaction including order ID, customer ID, order date, product, quantity, unit price, total price, shipping address, payment method, order status, tracking number, cart items, referral source, and coupon code. In total the dataset spans orders placed between January 2023 and June 2025.</p>
+    
+    <!-- Data Cleaning -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Data Cleaning and Preparation</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:25px">For this project, the data was cleaned and prepared using SQL before being brought into Power BI for visualization. Doing the cleaning and the calculations in SQL meant the numbers were verified at the source, so that Power BI only had to focus on presenting them. The cleaning involved several steps:</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>1. Removed duplicate records.</b> The order table was checked for repeated rows, and the order identifier was checked to confirm that every order appeared only once. Removing duplicates is important because a duplicated order would be counted twice and would quietly inflate both the order count and the total revenue.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>2. Fixed data types and formats.</b> Each column was reviewed to make sure it was stored in the correct form, so that dates were treated as proper dates, the quantity and item counts were treated as whole numbers, and the unit price and total price were treated as decimal values. Correct formatting matters because it determines whether dates sort properly and whether the revenue calculations return accurate results.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>3. Standardized text values.</b> Fields such as the product name, payment method, order status, and referral source were cleaned of extra spaces and made consistent in their capitalization, so that the same value would not appear in two slightly different forms and be counted as two separate categories.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>4. Handled the coupon code field.</b> Around a quarter of all orders had no coupon code at all, because those customers simply did not use a promotion. Since the field was largely empty and did not contribute meaningfully to the analysis, the coupon code column was removed so that the focus could stay on the fields that actually drive insight.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px"><b>5. Calculated core measures in SQL.</b> With the data cleaned, SQL was used to calculate the core business measures directly in the database. Total revenue was calculated, along with the average order value, the number of unique customers, the revenue generated by each product, and the totals for each year. Calculating these figures in SQL first meant they could be checked and trusted before they ever reached the dashboard.</p>
+    
+    <!-- Data Visualization -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Data Visualization</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px">The performance dashboard was designed to give an overview of the whole business at a glance and then let the user filter into the details. Each visual was chosen for the kind of question it answers best.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>KPI cards (Total Revenue, Total Orders, Total Customers, Average Order Value).</b> Cards are the fastest way to communicate a single important number, and together these four immediately establish the size of the business before the user examines any chart. Placing total customers directly beside total orders was a deliberate choice, because seeing that the two numbers are almost identical instantly raises an important question about whether customers are returning.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Total Orders by Order Status — column chart.</b> A column chart compares categories side by side, which makes it easy to see how orders are distributed across delivered, shipped, pending, cancelled, and returned. This visual turned out to be the most revealing on the page, because it exposes how few orders actually reach the customer.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Total Revenue by Product — horizontal bar chart.</b> A horizontal bar chart ranks the products clearly and leaves room for the product names to remain readable, so it is easy to see which products contribute the most and how close they are to one another.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Total Orders by Referral Source — column chart.</b> A column chart makes it simple to compare the marketing channels against each other and to see whether any single channel dominates or whether traffic is spread evenly across them.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>Total Revenue by Year — line chart.</b> A line chart is the clearest way to display change over time, and plotting revenue by year immediately shows the direction the business is heading. It is worth noting that the data for 2025 only covers the first half of the year, so that final point represents a partial year rather than a full one.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px"><b>Slicers (Payment Method, Quarter, Month).</b> Slicers were placed at the top of the dashboard so that the entire page can be filtered by how customers paid and by time period. Selecting any of these updates every visual on the page at once, allowing the user to explore the data from different angles.</p>
+    
+    <!-- Dashboard Images -->
+    <img src="ECOM1.png" alt="Sales KPIs" style="width:100%; border-radius:4px; margin:25px 0">
+    <p style="color:#888; font-size:0.85rem; text-align:center; margin-top:-15px; margin-bottom:30px"><i>KPI cards for Total Revenue, Total Orders, Total Customers, and Average Order Value</i></p>
+    
+    <img src="ECOM2.png" alt="Order Status and Products" style="width:100%; border-radius:4px; margin:25px 0">
+    <p style="color:#888; font-size:0.85rem; text-align:center; margin-top:-15px; margin-bottom:30px"><i>Order status distribution and revenue by product breakdown</i></p>
+    
+    <img src="ECOM3.png" alt="Marketing and Trends" style="width:100%; border-radius:4px; margin:25px 0">
+    <p style="color:#888; font-size:0.85rem; text-align:center; margin-top:-15px; margin-bottom:40px"><i>Referral source analysis and revenue trend over time</i></p>
+    
+    <!-- Insights -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Insights</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>1. Order fulfillment is the most serious problem.</b> Only about <b>19%</b> of orders were actually delivered, while the remaining orders were spread across pending, shipped, cancelled, and returned. With roughly a fifth of orders ending in cancellation and another fifth in returns, far more orders fail to complete than succeed, which is well below what a healthy online store should expect.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>2. There is an almost complete absence of repeat customers.</b> There were 1,189 unique customers across 1,200 orders, which means that on average each customer placed only a single order and almost never returned. This points to a customer retention problem rather than simply a problem of attracting new buyers.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px"><b>3. Revenue is trending downward.</b> Revenue fell from about <b>$0.55 million</b> in 2023 to roughly <b>$0.48 million</b> in 2024. The figure for 2025 is lower again, but because that year only includes the first six months of data, it cannot be compared directly to the full years before it. Even so, the year-over-year decline from 2023 to 2024 is real and worth attention.</p>
+    
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px"><b>4. Revenue and marketing are balanced across categories.</b> Revenue is fairly balanced rather than concentrated. The leading products, including the chair and the printer, each generated around <b>$196,000</b>, with the remaining products following closely behind. Marketing performance is similarly even, with channels such as Instagram and email leading but no single referral source standing out dramatically from the rest.</p>
+    
+    <!-- Recommendation -->
+    <h2 style="font-size:1.8rem; font-weight:700; margin-top:50px; margin-bottom:20px">Recommendation</h2>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:18px">The business should focus first on its fulfillment problem, because driving more sales will not help a store that cannot deliver the orders it already has. Understanding why so many orders are cancelled or returned, whether the cause is stock issues, slow shipping, or mismatched customer expectations, should be the immediate priority.</p>
+    <p style="color:#ddd; line-height:1.9; font-size:1.05rem; margin-bottom:40px">Alongside this, the business should build a customer retention strategy, since converting even a small share of one-time buyers into repeat customers would have a major effect on revenue given how many one-time customers already exist. The high return rate in particular deserves investigation, as returns are costly and often signal a gap between what customers expect and what they receive.</p>
+    
+    <!-- Links -->
+    <div style="border-top:1px solid #333; padding-top:30px; margin-top:50px">
+      <p style="color:#ccc; font-size:1rem"><b>View repository:</b> <a href="#" style="color:#4ade80; text-decoration:underline">GitHub</a></p>
+      <p style="color:#ccc; font-size:1rem"><b>Connect:</b> <a href="https://linkedin.com/in/deborah-eke-5aaa24285/" target="_blank" style="color:#4ade80; text-decoration:underline">LinkedIn</a></p>
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>
