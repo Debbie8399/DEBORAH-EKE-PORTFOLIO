@@ -107,7 +107,7 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
 <section id="about">
   <div class="about-wrap">
     <div>
-      <h2>About Me</h2>
+     <h2 id="about-title" style="font-size:2.8rem; font-weight:800; margin-bottom:25px; line-height:1.2; border-bottom:3px solid #4ade80; padding-bottom:10px; display:inline-block; min-height:1.2em"></h2>
       <p>I'm a Data Analyst who turns raw data into insights people can actually use. I specialize in cleaning messy datasets, writing SQL queries, and building interactive dashboards that answer real business questions fast.</p>
       <p>I turn raw data into clear decisions. I analyze performance, find improvement areas, and build simple, visual dashboards teams can act on. I've handled thousands of records, built interactive reports, and reduced errors to make reporting more reliable and efficient.</p>
       <p>I'm passionate about business intelligence and data-driven decision making. I've built projects analyzing sales, customer behavior, and operational data using Excel, Power BI and SQL. I'm constantly learning through hands-on work.</p>
@@ -537,6 +537,34 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
     <p><b>What I learned:</b> Data fundamentals, data cleaning techniques, basic statistical analysis, and working with real datasets to identify trends and extract actionable insights.</p>
   </div>
 </div>
+<script>
+// Typewriter effect for About Me heading
+const aboutText = "About Me";
+const aboutElement = document.getElementById("about-title");
+let charIndex = 0;
 
+function typeAboutMe() {
+  if (charIndex < aboutText.length) {
+    aboutElement.innerHTML += aboutText.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeAboutMe, 120); // 120ms = typing speed
+  } else {
+    // Remove cursor after typing finishes
+    aboutElement.style.borderRight = "none";
+  }
+}
+
+// Add blinking cursor
+aboutElement.style.borderRight = "3px solid #4ade80";
+
+// Start typing when About section is visible
+const aboutObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && charIndex === 0) {
+    typeAboutMe();
+  }
+}, { threshold: 0.5 });
+
+aboutObserver.observe(aboutElement);
+</script>
 </body>
 </html>
