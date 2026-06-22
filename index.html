@@ -544,33 +544,49 @@ footer{text-align:center; padding:40px 20px; border-top:1px solid #222; color:#6
   </div>
 </div>
 <script>
-// Typewriter effect for About Me heading
-const aboutText = "About Me";
-const aboutElement = document.getElementById("about-title");
+const titleElement = document.getElementById("about-title");
+const paragraphs = document.querySelectorAll("#about-text p");
+const titleText = "About Me";
+let titleIndex = 0;
+let paraIndex = 0;
 let charIndex = 0;
 
-function typeAboutMe() {
-  if (charIndex < aboutText.length) {
-    aboutElement.innerHTML += aboutText.charAt(charIndex);
-    charIndex++;
-    setTimeout(typeAboutMe, 120); // 120ms = typing speed
+titleElement.style.borderRight = "3px solid #4ade80";
+
+function typeTitle() {
+  if (titleIndex < titleText.length) {
+    titleElement.innerHTML += titleText.charAt(titleIndex);
+    titleIndex++;
+    setTimeout(typeTitle, 100);
   } else {
-    // Remove cursor after typing finishes
-    aboutElement.style.borderRight = "none";
+    titleElement.style.borderRight = "none";
+    typeParagraph();
   }
 }
 
-// Add blinking cursor
-aboutElement.style.borderRight = "3px solid #4ade80";
+function typeParagraph() {
+  if (paraIndex >= paragraphs.length) return;
+  const currentP = paragraphs[paraIndex];
+  const fullText = currentP.getAttribute("data-text");
 
-// Start typing when About section is visible
-const aboutObserver = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting && charIndex === 0) {
-    typeAboutMe();
+  if (charIndex < fullText.length) {
+    currentP.innerHTML += fullText.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeParagraph, 25);
+  } else {
+    paraIndex++;
+    charIndex = 0;
+    setTimeout(typeParagraph, 400);
   }
-}, { threshold: 0.5 });
+}
 
-aboutObserver.observe(aboutElement);
+const aboutObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && titleIndex === 0) {
+    typeTitle();
+  }
+}, { threshold: 0.3 });
+
+aboutObserver.observe(document.getElementById("about"));
 </script>
 </body>
 </html>
